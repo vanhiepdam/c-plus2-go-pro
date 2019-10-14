@@ -2,7 +2,7 @@
 
 using namespace std;
 
-void sentence6()
+int main()
 {
     short numb1 = 1, numb2 = 1, numb3 = 1, countNumber = 0;
     short runtimeCount = 0;

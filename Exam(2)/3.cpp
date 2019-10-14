@@ -2,7 +2,7 @@
 
 using namespace std;
 
-void sentence3()
+int main()
 {
     int oddNumber = 1;
     int divisibleNumber = 3;

@@ -2,7 +2,7 @@
 
 using namespace std;
 
-void sentence7()
+int main()
 {
     int rowNumber;
     int countNumber = 1;

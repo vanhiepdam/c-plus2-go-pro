@@ -2,13 +2,11 @@
 
 using namespace std;
 
-void sentence2() {
-    cout << "This program show 3 smallest number in a list\nType ; to get the result\n";
+int main() {
+    cout << "This program show 3 smallest number in a list\nNote: value 0 does not count.\nType ; or anything that's not a number to get the result\n";
     int number1st = 2100000000, number2nd = 2100000001, number3rd = 2100000002, listLitmit = 1;
-    string getResult;
     for(int numberGiven ;listLitmit <= 30; listLitmit++) {
-        cin >> numberGiven, getResult;
-        if(getResult == ";") break;
+        cin >> numberGiven;
         if(numberGiven == 0) continue;
         if(numberGiven <= number1st){
             number3rd = number2nd;

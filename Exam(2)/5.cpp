@@ -2,7 +2,7 @@
 
 using namespace std;
 
-void sentence5()
+int main()
 {
     int sum1 = 0, sum2 = 0;
     int term;

@@ -2,7 +2,7 @@
 
 using namespace std;
 
-void sentence8()
+int main()
 {
     short choice;
     int width, height, square;

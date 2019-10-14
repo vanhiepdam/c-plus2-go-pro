@@ -2,7 +2,7 @@
 
 using namespace std;
 
-void sentence1() {
+int main() {
     cout << "This program calculate the sum of list of integer numbers\nNote that the length of list is less than or equal 100\nType *;* to get the sum\n";
     int cinNumber, sum = 0;
     int loop = 1;

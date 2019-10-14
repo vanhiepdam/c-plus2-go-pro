@@ -2,7 +2,7 @@
 
 using namespace std;
 
-void sentence9()
+int main()
 {
     int arraySize;
     int index1, index2, intVoid;
@@ -22,8 +22,10 @@ void sentence9()
     reset:
     cout << "Choose 2 positions you wanna change: ";
     cin >> index1 >> index2;
+        index1--;
+        index2--;
         if((index1 >= (arraySize + 1)) || (index2 >= (arraySize + 1))) {
-            cout << "Input can not exceed arry length\nNote:postion of indexes start from 0 *0 1 2 3 4 ...*\n";
+            cout << "Input can not exceed arry length\n";
             goto reset;
         }
         if((index1 < 0) || (index2 < 0)) {
