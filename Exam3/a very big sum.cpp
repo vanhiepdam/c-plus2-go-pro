@@ -6,10 +6,9 @@ vector<string> split_string(string);
 
 // Complete the aVeryBigSum function below.
 long aVeryBigSum(vector<long> ar) {
-    short index = 0;
     long long sum = 0;
-    for(int count = 0; count < ar.size(); count++, index++) {
-    sum += ar.at(index);
+    for(int count = 0, index=0; count < ar.size(); count++, index++) {
+        sum += ar.at(index);
     }
     return sum;
 }
