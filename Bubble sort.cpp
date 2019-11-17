@@ -8,7 +8,7 @@ void bubbleSort(int SIZE) {
     if(arr.size() == 1) {
         return ;
     }
-    if(SIZE = 0) {
+    if(SIZE == 0) {
         return ;
     }
     else {
