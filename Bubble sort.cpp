@@ -1,44 +1,43 @@
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
-int bubbleSort(int arr[], int Size, int elmt) {
-    if(Size = 0) {
+vector<int> bubbleSort(vector<int> arr,int SIZE) {
+    if(arr.size() == 1) {
+        return arr;
+    }
+    if(SIZE = 0) {
         return arr;
     }
     else {
-        int temp;
-        if(elmt == Size) {
-            if(Size == arr.size()){
-                return arr[];
-            } else {
-                Size++;
-                bubbleSort(arr, Size, elmt);
+        for(int count = 1; count < arr.size(); count++){
+            if(arr.at(count) < arr.at(count - 1)) {
+                int temp;
+                temp = arr.at(count);
+                arr.at(count) = arr.at(count - 1);
+                arr.at(count - 1) = temp;
             }
         }
-        else {
-        if(arr[elmt] < arr[elmt + 1]) {
-            temp = arr[elmt];
-            arr[elmt] = arr[elmt + 1];
-            arr[elmt + 1] = temp;
-        }
-        elmt++;
-        bubbleSort(arr, Size, elmt);
+        bubbleSort(arr, SIZE - 1);
     }
+    return arr;
 }
 
 int main() {
     int arr_size;
     cout << "Input array size: ";
-    cin arr_size;
+    cin >> arr_size;
     cout << "Input array: ";
-    int arr[arr_size];
+    vector<int> arr_(arr_size);
+    int x;
     for(int count = 0; count < arr_size; count++) {
-        cin >> arr[count];
+        cin >> x;
+        arr_.push_back(x);
     }
-    bubbleSort(arr, arr_size);
+    arr_ = bubbleSort(arr_, arr_size);
     cout << "Sorted array: ";
-    for(int count = 0; count <arr_size; count++) {
-
+    for(int count = 0; count < arr_size; count++) {
+        cout << arr_.at(count) << " ";
     }
 }
