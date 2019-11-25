@@ -1,0 +1,293 @@
+1. Can you declare a vector to hold a mixture of ints and doubles?
+	no
+2. What happens if you attempt to access an element of a vector using a negative index?
+	out_of_bound
+3. Given the declaration
+	std::vector<int> list(100);
+	(a) What expression represents the very first element of list?
+		list[0];, list.at(0);
+	(b) What expression represents the very last element of list?
+		list.back();
+		list.at(99);
+	(c) Write the code fragment that prints out the contents of list.
+		cout << list.back();
+		cout << list.at(99);
+		cout << list[99];
+	(d) Is the expression list[3.0] legal or illegal?
+		illegal
+4. Given the declarations
+std::vector<int> list{2, 3, 1, 14, 4};
+int x = 2;
+evaluate each of the following expressions:
+	(a) list[1]
+		3
+	(b) list[x]
+		1
+	(c) list.size()
+		5
+	(d) list.empty()
+		false
+	(e) list.at(3)
+		14
+	(f) list[x] + 1
+		2
+	(g) list[x + 1]
+		14
+	(h) list[list[x]]
+		3
+	(i) list[list.size() - 1]
+		4
+5. Is the following code fragment legal or illegal?
+std::vector<int> list1(5), list2{ 3, 3, 3, 3, 3 };
+list1 = list2;
+	legal
+6. Provide a single declaration statement that declares an integer vector named list that contains the
+values 45, −3, 16 and 8?
+	vector<int> list{45, -3, 16, 8};
+7. Does a vector keep track of the number of elements it contains?
+	yes
+8. Does an array keep track of the number of elements it contains?
+	no
+9. Does the std::array class have more in common with a static array or a dynamic array?
+	no
+10. Complete the following function that adds up all the positive values in an integer vector. For example,
+if vector vec contains the elements 3, -3, 5, 2, −1, and 2, the call sum_positive(vec) would
+evaluate to 12, since 3 + 5 + 2 + 2 = 12. The function returns zero if the vector is empty. The function
+does not affect the contents of the vector.
+int sum_positive(const std::vector<int>& v) {
+	// Add your code...
+	int sum = 0;
+	if(v.empty() == true) {
+		return 0;
+	}
+	for(int count = 0; count < v.size(); count++;)
+		if(v.at(count) > 0) {
+			sum += v.at(count);
+		}
+	return sum;
+}
+11. Complete the following function that counts the even numbers in an integer vector. For example, if
+vector vec contains the elements 3, 5, 4, −1, and 0, the call count_evens(vec) would evaluate
+to 2, since the vector contains two even numbers: 4 and 0. The function returns zero if the vector is
+empty. The function does not affect the contents of the vector.
+int count_evens(const std::vector<int>& v) {
+	// Add your code...
+	int result = 0;
+	for(int count = 0; count < v.size(); count++) {
+		if(v.at(count) == 0 || v.at(count) % 2 == 0) {
+			result++;
+		}
+	}
+	return result;
+}
+12. Complete the following function that counts the even numbers in a 2D vector of integers.
+int count_evens(const std::vector<std::vector<int>>& v) {
+	// Add your code...
+	int result = 0;
+	for(int count1 = 0; count1 < v.size(); count1++) {
+		for(int count2 = 0; count2 < v.at(count1).size(); count2++) {
+			if(v.at(count1).at(count2) == 0 || v.at(count1).at(count2) % 2 == 0) {
+				result++;
+			}
+		}
+	}
+	return result;
+}
+13. Complete the following function that compares two integer vectors to see if they contain exactly
+the same elements in exactly the same positions. The function returns true if the vectors are equal;
+otherwise, it returns false. For example, if vector vec1 contains the elements 3, 5, 2, −1, and 2,
+and vector vec2 contains the elements 3, 5, 2, −1, and 2, the call equals(vec1, vec2)
+would evaluate to true. If instead vector vec2 contains the elements 3, 2, 5, −1, and 2, the call
+equals(vec1, vec2) would evaluate to false (the second and third elements are not in the same
+positions). Two vectors of unequal sizes cannot be equal. The function does not affect the contents
+of the vectors.
+bool equals(const std::vector<int>& v1, const std::vector<int>& v2) {
+	// Add your code...
+	for(int count = 0; count < v1.size(); count++) {
+		if(v1.at(count) != v2.at(count)) {
+			return false;
+		}
+	}
+	return true;
+}
+14. Complete the following function that determines if all the elements in one vector also appear in
+another. The function returns true if all the elements in the second vector also appear in the first;
+otherwise, it returns false. For example, if vector vec1 contains the elements 3, 5, 2, −1, 7,
+and 2, and vector vec2 contains the elements 5, 7, and 2, the call contains(vec1, vec2)
+would evaluate to true. If instead vector vec2 contains the elements 3, 8, −1, and 2, the call
+contains(vec1, vec2) would evaluate to false (8 does not appear in the first vector). Also
+If vector vec2 contains the elements 5, 7, 2, and 5, the call contains(vec1, vec2) would
+evaluate to false (5 appears twice in vec2 but only once in vec1, so vec1 does not contain all the
+elements that appear in vec2). The function does not affect the contents of the vectors.
+bool contains(const std::vector<int>& v1,
+const std::vector<int>& v2) {
+	// Add your code...
+	vector<int> temp = v1;
+	bool appeared;
+	for(int count1 = 0; count1 < v2.size(); count1++) {
+		appeared = false;
+		for(int count2 = 0; count2 < temp.size(); count2++) {
+			if(v2.at(count1) == temp.at(count2)) {
+				temp.pop(count2);
+				appeared = true;
+			}
+		}
+		if(appeared == false) {
+			return false;
+		}
+	}
+	return true;
+}
+15. Suppose your task is to implement the function with the prototype
+void proc(std::vector<int> v);
+When you implement the body of proc, how can you determine the size of vector v?
+	v.size();
+16. Consider the declaration
+std::vector<std::vector<int>> collection(100, std::vector<int>(200));
+	(a) What does the expression collection[15][29] represent?
+		element at index 29 of vector 15
+	(b) How many elements does collection hold?
+		20000
+	(c) Write the C++ code that prints all the elements in collection. All the elements in the same
+row should appear on the same line, and but each successive row should appear on its own line.
+	for(int count1 = 0; count1 < collection.size(); count1++) {
+		for(int count2 = 0; count2 < collection.at(count2).size(); count2++) {
+			cout << collection.at(count1).at(count2) << " ";
+		}
+		cout << "\n";
+	}
+(d) What does the expression collection[15] represent?
+	vector at index 15 of collection
+17. Consider the declaration
+std::vector<std::vector<std::vector<std::vector<int>>>>
+mesh(100, std::vector<int>(200, std::vector<int>(100,
+std::vector<int>(50))));
+How many elements does mesh hold?
+	100000000 element
+18. How is a C++ array different from a vector?
+	vector could increse size simotaneously
+	vector could keep track of it size
+	vector could empty
+19. What advantages does a C++ vector provide over an array?
+	vector is more convenient
+20. Provide the statement(s) that declare and create a static array named a that can hold 20 integers.
+	int array[20];
+21. Provide the statement(s) that declare and ceate a dynamic array named a that can hold 20 integers.
+	int a = 20;
+	int b[a];
+22. What extra attention does a programmer need to give to a static array when its use within a program
+is finished?
+	i dont know
+23. What extra attention does a programmer need to give to a dynamic array when its use within a
+program is finished?
+	i dont know
+24. What extra attention does a programmer need to give to a vector array when its use within a program
+is finished?
+	i dont know
+25. Consider the following function that processes the elements of an array using a range:
+bool proc(const int *begin, const int *end) {
+// Details omitted . .	
+}
+and an array and vector declared as shown here:
+int a[10];
+std::vector<int> v;
+(a) Provide the statement that correctly calls proc with array a.
+(b) Provide the statement that correctly calls proc with vector v.
+26. Can you declare an array to hold a mixture of ints and doubles?
+27. What happens if you attempt to access an element of an array using a negative index?
+28. Given the declaration
+int list[100];
+(a) What expression represents the very first element of list?
+(b) What expression represents the very last element of list?
+(c) Write the code fragment that prints out the contents of list.
+(d) Is the expression list[3.0] legal or illegal?
+29. Is the following code fragment legal or illegal?
+©2019 Richard L. Halterman Draft date: July 11, 201911.5. EXERCISES 348
+int list1[5], list2[5] = { 3, 3, 3, 3, 3 };
+list1 = list2;
+30. Provide a single declaration statement that declares an integer array named list that contains the
+values 45, −3, 16 and 8?
+31. Does an array keep track of the number of elements it contains?
+32. Complete the following function that adds up all the positive values in an array of integers. For
+example, if array arr contains the elements 3, -3, 5, 2, −1, and 2, the call sum_positive(arr)
+would evaluate to 12, since 3 + 5 + 2 + 2 = 12. The function returns zero if the array is empty (that
+is, n < 1).
+// Array a with length n
+int sum_positive(const int *a, int n) {
+// Add your code...
+}
+33. Complete the following function that sums the even numbers in an array of integers. For example, if
+array arr contains the elements 3, 5, 2, −1, and 2, the call sum_evens(arr) would evaluate to
+4, since 2 + 2 = 4. The function returns zero if the array is empty (that is, n < 1). The function does
+not affect the contents of the array.
+// Array a with length n
+int sum_evens(const int *a, int n) {
+// Add your code...
+}
+34. Suppose your task is to implement the function with the prototype
+void proc(int a[]);
+When you implement the body of proc, how can you determine the size of array a?
+35. Consider the declaration
+int collection[100][200];
+What does the expression collection[15][29] represent?
+36. Consider the declaration
+int collection[100][200];
+How many elements does collection hold?
+37. Consider the declaration
+int collection[100][200];
+Write the C++ code that prints all the elements in collection. All the elements in the same row
+should appear on the same line, and but each successive row should appear on its own line.
+38. Consider the declaration
+int collection[100][200];
+©2019 Richard L. Halterman Draft date: July 11, 201911.5. EXERCISES 349
+What does the expression collection[15] represent?
+39. Consider the declaration
+int mesh[100][200][100][50];
+How many elements does mesh hold?
+40. Rewrite the following expressions using pointer notation instead of array notation.
+(a) a[4]
+(b) a[1]
+(c) a[0]
+41. Rewrite the following expressions using array notation instead of pointer notation.
+(a) *(a + 3)
+(b) *a
+(c) *(a + 0)
+42. Rewrite the following code fragment using array notation instead of pointer notation:
+void display(int *a, int n) {
+while (n) {
+std::cout << *a << " ";
+a++;
+n--;
+}
+std::cout << '\n';
+}
+43. Rewrite the following code fragment using pointer notation instead of array notation:
+int sum(int *a, int n) {
+int s = 0;
+for (int i = 0; i < n; i++)
+s += a[i];
+return s;
+}
+44. Consider the following declaration:
+char *word = "abcde";
+Evaluate each of the following expressions. If an expression indicates undefined behavior, write UB.
+(a) word[1]
+(b) *word
+(c) word[5]
+45. Suppose your task is to implement the function with the prototype
+void proc(char *s);
+©2019 Richard L. Halterman Draft date: July 11, 201911.5. EXERCISES 350
+where s is a C string. When you implement the body of proc, how can you determine the length of
+string s?
+46. Given the following declarations which appear in a function body:
+double nums[100], *grid = new double[100];
+(a) Where will the elements of the nums array live—static memory, the stack, or the heap?
+(b) Where will the elements of the grid array live—static memory, the stack, or the heap?
+47. What operator should eventually be used when the new operator is used to allocate memory? What
+is the consequence of its omission?
+48. List some common errors programmers make when dealing with dynamic memory.
+49. Complete the following function that counts the number of negative values in a 10 × 10 integer 2D
+array.
+int count_negatives(int a[10][10]) {
+// Add your code...
+}
