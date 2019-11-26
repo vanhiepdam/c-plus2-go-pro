@@ -1,0 +1,127 @@
+1. Complete the following function that reorders the contents of a vector so they are reversed from
+their original order. For example, a vector containing the elements 2, 6, 2, 5, 0, 1, 2, 3 would be
+transformed into 3, 2, 1, 0, 5, 2, 6, 2. Note that your function must physically rearrange the elements
+within the vector, not just print the elements in reverse order.
+void reverse(std::vector<int>& v) {
+	// Add your code...
+	bool isEven = true;
+	int temp;
+	int reverseCount = v.size() - 1;
+	if(v.size() % 2 == 1) {
+		isEven = false;
+	}
+	if(isEven == true) {
+		for(int count = 0; count < v.size / 2; count++) {
+			temp = v.at(count);
+			v.at(count) = v.at(reverseCount);
+			v.at(reverseCount) = temp;
+			reverseCount--;
+		}
+	} else {
+		for(int count = 0; count < v.size / 2 - 1; count++) {
+			temp = v.at(count);
+			v.at(count) = v.at(reverseCount);
+			v.at(reverseCount) = temp;
+			reverseCount--;
+		}
+	}
+}
+2. Complete the following function that reorders the contents of a vector so that all the even numbers
+appear before any odd number. The even values are sorted in ascending order with respect to themselves, and the odd numbers that follow are also sorted in ascending order with respect to themselves.
+For example, a vector containing the elements 2, 1, 10, 4, 3, 6, 7, 9, 8, 5 would be transformed into
+2, 4, 6, 8, 10, 1, 3, 5, 7, 9 Note that your function must physically rearrange the elements within the
+vector, not just print the elements in reverse order.
+void special_sort(std::vector<int>& v) {
+	// Add your code...
+	int temp;
+	for(int count = 0; count < v.size(); count++) {
+		if(v.at(count) % 2 == 0) {
+			for(int count2 = count; count2 < v.size - count; count2++) {
+				if(v.at(count) > v.at(count2)) {
+					temp = v.at(count);
+					v.at(count2) = v.at(count2 + 1);
+					v.at(count2) = v.at(count2);
+				}
+			}
+		}
+	]
+}
+3. Complete the following function that shifts all the elements of a vector backward one place. The
+last element that gets shifted off the back end of the vector is copied into the first (0th) position. For
+example, if a vector containing the elements 2, 1, 10, 4, 3, 6, 7, 9, 8, 5 is passed to the function,
+it would be transformed into 5, 2, 1, 10, 4, 3, 6, 7, 9, 8 Note that your function must physically
+rearrange the elements within the vector, not just print the elements in the shifted order.
+void rotate(std::vector<int>& v) {
+	// Add your code...
+	int temp;
+	for(int count = 0; count < v.size(); count++) {
+		if(count != v.size() - 1) {
+			temp = v.at(count + 1);
+			v.at(count + 1) = v.at(count); 
+		} else {
+			v.at(0) = temp;
+		}
+	}
+}
+4. Complete the following function that determines if the number of even and odd values in a vector is
+the same. The function would return true if the vector contains 5, 1, 0, 2 (two evens and two odds),
+but it would return false for the vector containing 5, 1, 0, 2, 11 (too many odds). The function should
+return true if the vector is empty, since an empty vector contains the same number of evens and odds
+(0). The function does not affect the contents of the vector.
+bool balanced(const std::vector<int>& v) {
+	// Add your code...
+	int even = 0; odd = 0;
+	for(int count = 0; count < v.size(); count++) {
+		if(v.at(count) % 2 == 0) {
+			even++;
+		} else {
+			odd++;
+		}
+	}
+	if(even == odd) {
+		return true;
+	} else {
+		false;
+	}
+}
+5. Complete the following function that returns true if vector a contains duplicate elements; it returns
+false if all the elements in a are unique. For example, the vector 2, 3, 2, 1, 9 contains duplicates (2
+appears more than once), but the vector 2, 1, 0, 3, 8, 4 does not (none of the elements appear more
+than once).
+An empty vector has no duplicates.
+The function does not affect the contents of the vector.
+bool has_duplicates(const std::vector<int>& v) {
+	// Add your code...
+	for(int count1 = 0; count1 < v.size(); count++) {
+		for(int count2 = 0; count < v.size(); count++) {
+			if(v.at(count1) == v.at(count2)) {
+				return true;
+			}
+		}
+	}
+	return false;
+}
+6. Can binary search be used on an unsorted vector? Why or why not?
+	no
+7. Can linear search be used on an unsorted vector? Why or why not?
+	yes
+8. Complete the following function is_ascending that returns true if the elements in a vector of
+integers appear in ascending order (more precisely, non-descending order, if the vector contains duplicates). For example, the following statement
+std::cout << is_ascending({3, 6, 2, 1, 7}) << '\n';
+would print false, but the statement
+std::cout << is_ascending({3, 6, 7, 12, 27}) << '\n';
+would print true. The nonexistent elements in an empty vector are considered to be in ascending
+order because they cannot be out of order.
+bool is_ascending(std::vector<int>& v) {
+	// Add your code...
+	for(int count = 0; count < v.size() - 1; count++) {
+		if(v.at(count) > v.at(count + 1)) {
+		return false;
+	}
+	return true;
+}
+9. Consider a sort function that uses the is_ascending function from the previous problem. It uses
+a loop to test the permutations of a vector of integers. When it finds a permutation that contains all of
+the vector’s elements in ascending order it exits the loop. Do you think this would be a good sorting
+algorithm? Why or why not?
+	yes and i dont know.

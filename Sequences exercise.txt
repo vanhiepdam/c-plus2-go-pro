@@ -192,29 +192,48 @@ and an array and vector declared as shown here:
 int a[10];
 std::vector<int> v;
 (a) Provide the statement that correctly calls proc with array a.
+	proc(a[0], a[10]);
 (b) Provide the statement that correctly calls proc with vector v.
+	proc(v.at(0), v.size() - 1);
 26. Can you declare an array to hold a mixture of ints and doubles?
+	no
 27. What happens if you attempt to access an element of an array using a negative index?
+	out of bound.
 28. Given the declaration
 int list[100];
 (a) What expression represents the very first element of list?
+	list.front();
 (b) What expression represents the very last element of list?
+	list.back();
 (c) Write the code fragment that prints out the contents of list.
+	for(int count = 0; count < 100; count++) {
+		cout << list[count] << " ";
+	}
 (d) Is the expression list[3.0] legal or illegal?
+  illegal
 29. Is the following code fragment legal or illegal?
-©2019 Richard L. Halterman Draft date: July 11, 201911.5. EXERCISES 348
-int list1[5], list2[5] = { 3, 3, 3, 3, 3 };
-list1 = list2;
+	int list1[5], list2[5] = { 3, 3, 3, 3, 3 };
+	list1 = list2;
+		legal
 30. Provide a single declaration statement that declares an integer array named list that contains the
 values 45, −3, 16 and 8?
+	int list{45, -3, 16, 8}
 31. Does an array keep track of the number of elements it contains?
+	no
 32. Complete the following function that adds up all the positive values in an array of integers. For
 example, if array arr contains the elements 3, -3, 5, 2, −1, and 2, the call sum_positive(arr)
 would evaluate to 12, since 3 + 5 + 2 + 2 = 12. The function returns zero if the array is empty (that
 is, n < 1).
 // Array a with length n
 int sum_positive(const int *a, int n) {
-// Add your code...
+	// Add your code...
+	int sum = 0;
+	for(int count = 0; count < n; count++) {
+		if(a[count] > 0) {
+			sum += a[count];
+		}
+	}
+	return sum;
 }
 33. Complete the following function that sums the even numbers in an array of integers. For example, if
 array arr contains the elements 3, 5, 2, −1, and 2, the call sum_evens(arr) would evaluate to
@@ -222,36 +241,67 @@ array arr contains the elements 3, 5, 2, −1, and 2, the call sum_evens(arr) wo
 not affect the contents of the array.
 // Array a with length n
 int sum_evens(const int *a, int n) {
-// Add your code...
+	// Add your code...
+	int sum = 0;
+	for(int count = 0; count < n; count++) {
+		if(a[count] % 2 == 0) {
+			sum += a[count];
+		}
+	}
+	return sum;
 }
 34. Suppose your task is to implement the function with the prototype
 void proc(int a[]);
 When you implement the body of proc, how can you determine the size of array a?
+	a.size();
 35. Consider the declaration
 int collection[100][200];
 What does the expression collection[15][29] represent?
+	the 200th element of element 100 
 36. Consider the declaration
 int collection[100][200];
 How many elements does collection hold?
+	20000
 37. Consider the declaration
 int collection[100][200];
 Write the C++ code that prints all the elements in collection. All the elements in the same row
 should appear on the same line, and but each successive row should appear on its own line.
+	for(int count1 = 0; count1 < 100; count1++) {
+		for(int count2  = 0; count2 < 200; count2++) {
+			cout << collection[count1][count2] << " ";
+		}
+		cout << "\n";
+	}
 38. Consider the declaration
 int collection[100][200];
-©2019 Richard L. Halterman Draft date: July 11, 201911.5. EXERCISES 349
 What does the expression collection[15] represent?
+	array at index 15
 39. Consider the declaration
 int mesh[100][200][100][50];
 How many elements does mesh hold?
+	100000000
 40. Rewrite the following expressions using pointer notation instead of array notation.
-(a) a[4]
-(b) a[1]
-(c) a[0]
+	(a) a[4]
+		int *p;
+		p =&a;
+		p = 4;
+		p
+	(b) a[1]
+		int *p;
+		p =&a;
+		p = 1;
+		p
+	(c) a[0]
+		int *p;
+		p =&a[0];
+		p
 41. Rewrite the following expressions using array notation instead of pointer notation.
-(a) *(a + 3)
-(b) *a
-(c) *(a + 0)
+	(a) *(a + 3)
+		a[3]
+	(b) *a
+		a[0]
+	(c) *(a + 0)
+		a[0]
 42. Rewrite the following code fragment using array notation instead of pointer notation:
 void display(int *a, int n) {
 while (n) {
@@ -261,6 +311,12 @@ n--;
 }
 std::cout << '\n';
 }
+void display(int a, int n) {
+	for(int count = 0; count < n; count++) {
+		cout << a[count] << " ";
+	}	
+	cout << "\n";
+}
 43. Rewrite the following code fragment using pointer notation instead of array notation:
 int sum(int *a, int n) {
 int s = 0;
@@ -268,26 +324,53 @@ for (int i = 0; i < n; i++)
 s += a[i];
 return s;
 }
+
+int sum(int a, int n) {
+	int *p = a;
+	int sum = 0;
+	for(int count = 0; count < n; count++) {
+		sum += p;
+		p++;
+	}
+	return sum;
+}
+
 44. Consider the following declaration:
 char *word = "abcde";
 Evaluate each of the following expressions. If an expression indicates undefined behavior, write UB.
-(a) word[1]
-(b) *word
-(c) word[5]
+	(a) word[1]
+		b
+	(b) *word
+		"abcde"
+	(c) word[5]
+		ub
 45. Suppose your task is to implement the function with the prototype
 void proc(char *s);
-©2019 Richard L. Halterman Draft date: July 11, 201911.5. EXERCISES 350
 where s is a C string. When you implement the body of proc, how can you determine the length of
 string s?
+	-
 46. Given the following declarations which appear in a function body:
 double nums[100], *grid = new double[100];
-(a) Where will the elements of the nums array live—static memory, the stack, or the heap?
-(b) Where will the elements of the grid array live—static memory, the stack, or the heap?
+	(a) Where will the elements of the nums array live—static memory, the stack, or the heap?
+		nums
+	(b) Where will the elements of the grid array live—static memory, the stack, or the heap?
+		grid
 47. What operator should eventually be used when the new operator is used to allocate memory? What
 is the consequence of its omission?
+	-
 48. List some common errors programmers make when dealing with dynamic memory.
+	out of bound
 49. Complete the following function that counts the number of negative values in a 10 × 10 integer 2D
 array.
 int count_negatives(int a[10][10]) {
-// Add your code...
+	// Add your code...
+	numbers = 0;
+	for(int count1 = 0; count1 < 10; count1++) {
+		for(int count2 = 0; count2 < 10; count2++) {
+			if(a[count1][count2] < 0) {
+				numbers++;
+			}
+		}
+	}
+	return numbers;
 }
