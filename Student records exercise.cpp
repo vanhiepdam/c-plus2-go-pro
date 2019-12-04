@@ -22,9 +22,95 @@ using namespace std;
     vector<float> highest_score(4);
     vector<float> lowest_score(4);
 
-// add record
+void save_record() {
+    ofstream save;
+    save.open("ID.text");
+    for(int c = 0; c < n; c++) {
+        save << ID.at(c) << endl;
+    }
+    save.close();
+    save.open("name.text");
+    for(int c = 0; c < n; c++) {
+        save << name.at(c) << endl;
+    }
+    save.close();
+    save.open("sex.text");
+    for(int c = 0; c < n; c++) {
+        save << sex.at(c) << endl;
+    }
+    save.close();
+    save.open("qizz1_score.text");
+    for(int c = 0; c < n; c++) {
+        save << qizz1.at(c) << endl;
+    }
+    save.close();
+    save.open("qizz2_score.text");
+    for(int c = 0; c < n; c++) {
+        save << qizz2.at(c) << endl;
+    }
+    save.close();
+    save.open("mid_score.text");
+    for(int c = 0; c < n; c++) {
+        save << mid_score.at(c) << endl;
+    }
+    save.close();
+    save.open("final_score.text");
+    for(int c = 0; c < n; c++) {
+        save << final_score.at(c) << endl;
+    }
+    save.close();
+    save.open("total_score.text");
+    for(int c = 0; c < n; c++) {
+        save << total_score.at(c) << endl;
+    }
+    save.close();
+    cout << "done." << endl;
+}
 
-
+void load_record() {
+    ifstream load;
+    load.open("ID.text");
+    for(int c = 0; c < n; c++) {
+        load >> ID.at(c);
+    }
+    load.close();
+    load.open("name.text");
+    for(int c = 0; c < n; c++) {
+        load >> name.at(c);
+    }
+    load.close();
+    load.open("sex.text");
+    for(int c = 0; c < n; c++) {
+        load >> sex.at(c);
+    }
+    load.close();
+    load.open("qizz1_score.text");
+    for(int c = 0; c < n; c++) {
+        load >> qizz1.at(c);
+    }
+    load.close();
+    load.open("qizz2_score.text");
+    for(int c = 0; c < n; c++) {
+        load >> qizz2.at(c);
+    }
+    load.close();
+    load.open("mid_score.text");
+    for(int c = 0; c < n; c++) {
+        load >> mid_score.at(c);
+    }
+    load.close();
+    load.open("final_score.text");
+    for(int c = 0; c < n; c++) {
+        load >> final_score.at(c);
+    }
+    load.close();
+    load.open("total_score.text");
+    for(int c = 0; c < n; c++) {
+        load >> total_score.at(c);
+    }1
+    load.close();
+    cout << "done." << endl;
+}
 
 void fix_ID(int student_index) {
     cout << "input id: ";
@@ -432,6 +518,10 @@ int main() {
 
     cout << "9.     Sort students records by total score" << "\n\n";
 
+    cout << "10.    Save all record to file" << "\n\n";
+
+    cout << "11.    Load record from saved file" << "\n\n";
+
     cout << "   there are 7 section contain" << "\n\n";
 
     cout << "   1(ID)              2(name)              3(sex)" << "\n\n";
@@ -445,8 +535,9 @@ int main() {
     int choice;
     retry:
     cout << "menu: ";
-    while(cin >> choice) {
-        if(choice < 1 || choice > 9) {
+    while(true) {
+        cin >> choice;
+        if(choice < 1 || choice > 11) {
             cout << "what is wrong with you? read the description!";
             goto retry;
         }
@@ -485,6 +576,14 @@ int main() {
                 break;
             case 9:
                 total_score_sort();
+                cout << "menu: ";
+                break;
+            case 10:
+                save_record();
+                cout << "menu: ";
+                break;
+            case 11:
+                load_record();
                 cout << "menu: ";
                 break;
         }

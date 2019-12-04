@@ -1,0 +1,71 @@
+13.6 Exercises
+1. Suppose s is a std::string object.
+	(a) What expression represents the number of characters that make up s?
+		s.length();
+	(b) What expression represents the first character in s?
+		s[0];
+		s.at(0);
+	(c) What statement would insert the character 'x' onto the front of s?
+		s.insert(0, 'x');
+	(d) What statement would append the character 'x' onto the back of s?
+		s += 'x';
+2. Compared to C strings (see Section 11.2.6), what advantages does the C++ std::string type offer
+to programmers?
+	conveniant
+	methods
+	c++ string does not contain null terminator
+3. A palindrome is a string of text that reads the same forwards and backwards. Examples include:
+• “TENET”
+• “STEP ON NO PETS”
+• “RATS LIVE ON NO EVIL STAR”
+All these strings are examples of strict palindromes where spacing and punctuation must reverse
+exactly. Complete the following function that determines if a given string is a strict palindrome. It
+should return true if the string is a strict palindrome and false otherwise.
+The empty string reads the same forward and backward, so it is a palindrome. Your function should
+ignore capitalization (that is, the string “Tenet” is regarded as a palindrome).
+bool palindrome(const string& s) {
+	int d = s.length() - 1;
+	for(int c = 0; c < s.length(); c++, d--) {
+		if(tolower(s[c]) != tolower(s[d])) {
+			return false;
+		}
+	}
+	return true;
+}
+4. What is the class of the std::cout object?
+	iostream ?
+5. What is the class of the std::cin object?
+	iostream ?
+6. Suppose the user types in a line of text and presses the enter key. For example, the user might type
+the following:
+The sky is blue
+What C++ statement could you use to assign to a std::string variable named msg the complete
+line of text, including spaces?
+string msg;
+char input;
+while(cin >> input) {
+	msg.push_back(input);
+}
+7. Consider the following C++ program:
+#include <iostream>
+#include <fstream>
+#include <string>
+int main() {
+std::string w;
+std::ifstream x("results");
+while (x >> w)
+std::cout << '[' << w << "]\n";
+}
+(a) Explain what the program accomplishes.
+	print the content of file "results" on console
+(b) What does the variable x represent?
+	name of the file
+(c) As it currently is written, what does the program expect that may not be true?
+	the file is empty or it can not open the file for some reason ... i guess..
+(d) What would cause the program to print nothing?
+	the file is empty
+(e) How can you improve the program so that it always provides feedback to the user, even it the
+expectation in part #7c?
+	"after operation "while"" if(w.empty()) {
+									cout << "file is empty." << endl;
+										}
