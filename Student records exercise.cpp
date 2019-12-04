@@ -2,6 +2,7 @@
 #include <vector>
 #include <string>
 #include <fstream>
+#include <iomanip>
 
 using namespace std;
 
@@ -13,11 +14,13 @@ using namespace std;
     vector<long long> ID(n);
     vector<string> name(n);
     vector<string> sex(n);
-    vector<int> qizz1(n);
-    vector<int> qizz2(n);
-    vector<int> mid_score(n);
-    vector<int> final_score(n);
-    vector<int> total_score(n);
+    vector<float> qizz1(n, -1);
+    vector<float> qizz2(n, -1);
+    vector<float> mid_score(n, -1);
+    vector<float> final_score(n, -1);
+    vector<float> total_score(n);
+    vector<float> highest_score(4);
+    vector<float> lowest_score(4);
 
 // add record
 
@@ -54,8 +57,8 @@ void fix_sex(int student) {
 }
 
 void fix_score(int student, int v) {
-    int score;
-    cout << "inpute score: ";
+    float score;
+    cout << "input score: ";
     tryagain2:
     cin >> score;
     if(score < 0) {
@@ -78,6 +81,7 @@ void fix_score(int student, int v) {
             break;
     }
 }
+
 void add_record() {
     int selection;
     int selected_student;
@@ -108,10 +112,21 @@ void add_record() {
             fix_score(selected_student, 4);
             break;
     }
-    total_score.at(selected_student) = qizz1.at(selected_student) + qizz2.at(selected_student) + mid_score.at(selected_student) + final_score.at(selected_student);
+    total_score.at(selected_student) = 0;
+    if(qizz1.at(selected_student) != -1) {
+        total_score.at(selected_student) += qizz1.at(selected_student);
+    }
+    if(qizz2.at(selected_student) != -1) {
+        total_score.at(selected_student) += qizz2.at(selected_student);
+    }
+    if(mid_score.at(selected_student) != -1) {
+        total_score.at(selected_student) += mid_score.at(selected_student);
+    }
+    if(final_score.at(selected_student) != -1) {
+        total_score.at(selected_student) += final_score.at(selected_student);
+    }
     cout << "return to menu ... .. . " << endl;
 }
-// delete record
 
 void delete_record() {
     int selection;
@@ -159,8 +174,6 @@ void delete_record() {
     cout << "return to menu ... .. . " << endl;
 }
 
-// view all student records.
-
 void view_student_record() {
     for(int c = 0; c < student.size(); c++) {
         cout << "student number: " << c << endl;
@@ -204,6 +217,196 @@ void view_student_record() {
     cout << "return to menu ... .. . " << endl;
 }
 
+void average_score() {
+    int selected_student;
+    tryagain3:
+    cout << "input student number: ";
+    cin >> selected_student;
+    int a = 0;
+    int b = 4;
+    if(qizz1.at(selected_student) == -1) {
+        b--;
+    } else {
+        a += qizz1.at(selected_student);
+    }
+    if(qizz2.at(selected_student) == -1) {
+        b--;
+    } else {
+        a += qizz2.at(selected_student);
+        }
+    if(mid_score.at(selected_student) == -1) {
+        b--;
+    } else {
+        a += mid_score.at(selected_student);
+        }
+    if(final_score.at(selected_student) == -1) {
+        b--;
+    } else {
+        a += final_score.at(selected_student);
+        }
+    if(b == 0) {
+        cout << "scores of student " << selected_student << " are empty." << endl;
+        cout << "return to menu ... .. . " << endl;
+        return;
+    }
+    if(selected_student < 0 || selected_student > n) {
+        cout << "input is out of range .. tryagain..." << endl;
+        goto tryagain3;
+    } else {
+        cout << "average score of student " << selected_student << " is " << a / b << endl;
+        cout << "return to menu ... .. . " << endl;
+    }
+}
+
+void total_score_view() {
+    cout << "input student number: ";
+    int selected_student;
+    cin >> selected_student;
+    cout << "total score of student number " << selected_student << " is " << total_score.at(selected_student) << endl;
+}
+
+void display_score() {
+    vector<int> student_number_highest(n);
+    vector<int> student_number_lowest(n);
+    for(int c = 0; c < n; c++) {
+        if(qizz1.at(c) > highest_score.at(0)) {
+            highest_score.at(0) = qizz1.at(c);
+            student_number_highest.at(0) = c;
+        }
+        if(qizz2.at(c) > highest_score.at(1)) {
+            highest_score.at(1) = qizz2.at(c);
+            student_number_highest.at(1) = c;
+        }
+        if(mid_score.at(c) > highest_score.at(2)) {
+            highest_score.at(2) = mid_score.at(c);
+            student_number_highest.at(2) = c;
+        }
+        if(final_score.at(c) > highest_score.at(3)) {
+            highest_score.at(3) = final_score.at(c);
+            student_number_highest.at(3) = c;
+        }
+    }
+    lowest_score = highest_score;
+    for(int c = 0; c < n; c++) {
+        if(qizz1.at(c) < lowest_score.at(0) && qizz1.at(c) != -1) {
+            lowest_score.at(0) = qizz1.at(c);
+            student_number_lowest.at(0) = c;
+        }
+        if(qizz2.at(c) < lowest_score.at(1) && qizz2.at(c) != -1) {
+            lowest_score.at(1) = qizz2.at(c);
+            student_number_lowest.at(1) = c;
+        }
+        if(mid_score.at(c) < lowest_score.at(2) && mid_score.at(c) != -1) {
+            lowest_score.at(2) = mid_score.at(c);
+            student_number_lowest.at(2) = c;
+        }
+        if(final_score.at(c) < lowest_score.at(3) && final_score.at(c) != -1) {
+            lowest_score.at(3) = final_score.at(c);
+            student_number_lowest.at(3 ) = c;
+        }
+    }
+    cout << "|term|    |highest score|    |lowest score|" << endl << endl;
+
+    cout << "qizz1" << setw(13) << highest_score.at(0) << setw(19) << lowest_score.at(0) << endl << endl;
+    cout << "qizz2" << setw(13) << highest_score.at(1) << setw(19) << lowest_score.at(1) << endl << endl;
+    cout << "mid-term" << setw(10) << highest_score.at(2) << setw(19) << lowest_score.at(2) << endl << endl;
+    cout << "final" << setw(13) << highest_score.at(3) << setw(19) << lowest_score.at(3) << endl << endl;
+}
+
+void id_sort() {
+    long long temp_ID;
+    float temp_score;
+    string temp_string;
+    for(int c = 0; c < n; c++) {
+        for(int d = c; d > 0; d--) {
+            if(ID.at(d) != 0) {
+                if(ID.at(d) < ID.at(d - 1) || ID.at(d - 1 ) == 0) {
+                    temp_ID = ID.at(d);
+                    ID.at(d) = ID.at(d - 1);
+                    ID.at(d - 1) = temp_ID;
+
+                    temp_string = name.at(d);
+                    name.at(d) = name.at(d - 1);
+                    name.at(d - 1) = temp_string;
+
+                    temp_string = sex.at(d);
+                    sex.at(d) = sex.at(d - 1);
+                    sex.at(d - 1) = temp_string;
+
+                    temp_score = qizz1.at(d);
+                    qizz1.at(d) = qizz1.at(d - 1);
+                    qizz1.at(d - 1) = temp_score;
+
+                    temp_score = qizz2.at(d);
+                    qizz2.at(d) = qizz2.at(d - 1);
+                    qizz2.at(d - 1) = temp_score;
+
+                    temp_score = mid_score.at(d);
+                    mid_score.at(d) = mid_score.at(d - 1);
+                    mid_score.at(d - 1) = temp_score;
+
+                    temp_score = final_score.at(d);
+                    final_score.at(d) = final_score.at(d - 1);
+                    final_score.at(d - 1) = temp_score;
+
+                    temp_score = total_score.at(d);
+                    total_score.at(d) = total_score.at(d - 1);
+                    total_score.at(d - 1) = temp_score;
+                }
+            }
+        }
+    }
+    cout << "done." << endl;
+    cout << "return to menu ... .. ." << endl;
+}
+
+void total_score_sort() {
+    long long temp_ID;
+    float temp_score;
+    string temp_string;
+    for(int c = 0; c < n; c++) {
+        for(int d = c; d > 0; d--) {
+            if(total_score.at(d) != 0) {
+                if(total_score.at(d) > total_score.at(d - 1) || total_score.at(d - 1 ) == 0) {
+                    temp_ID = ID.at(d);
+                    ID.at(d) = ID.at(d - 1);
+                    ID.at(d - 1) = temp_ID;
+
+                    temp_string = name.at(d);
+                    name.at(d) = name.at(d - 1);
+                    name.at(d - 1) = temp_string;
+
+                    temp_string = sex.at(d);
+                    sex.at(d) = sex.at(d - 1);
+                    sex.at(d - 1) = temp_string;
+
+                    temp_score = qizz1.at(d);
+                    qizz1.at(d) = qizz1.at(d - 1);
+                    qizz1.at(d - 1) = temp_score;
+
+                    temp_score = qizz2.at(d);
+                    qizz2.at(d) = qizz2.at(d - 1);
+                    qizz2.at(d - 1) = temp_score;
+
+                    temp_score = mid_score.at(d);
+                    mid_score.at(d) = mid_score.at(d - 1);
+                    mid_score.at(d - 1) = temp_score;
+
+                    temp_score = final_score.at(d);
+                    final_score.at(d) = final_score.at(d - 1);
+                    final_score.at(d - 1) = temp_score;
+
+                    temp_score = total_score.at(d);
+                    total_score.at(d) = total_score.at(d - 1);
+                    total_score.at(d - 1) = temp_score;
+                }
+            }
+        }
+    }
+    cout << "done." << endl;
+    cout << "return to menu ... .. ." << endl;
+}
+
 int main() {
     cout << "===================================================" << "\n\n";
 
@@ -219,28 +422,29 @@ int main() {
 
     cout << "4.     View all student records" << "\n\n";
 
-    cout << "5.     Calculate an average of a selected student’s scores" << "\n\n";
+    cout << "5.     Calculate an average of a selected student scores" << "\n\n";
 
     cout << "6.     Calculate total scores of a selected student" << "\n\n";
 
     cout << "7.     Display the highest and lowest scores" << "\n\n";
 
-    cout << "8.     Sort students’ records by ID" << "\n\n";
+    cout << "8.     Sort students records by ID" << "\n\n";
 
-    cout << "9.     Sort students' records by total score" << "\n\n";
+    cout << "9.     Sort students records by total score" << "\n\n";
 
-    cout << "   there are 8 section contain" << "\n\n";
+    cout << "   there are 7 section contain" << "\n\n";
 
     cout << "   1(ID)              2(name)              3(sex)" << "\n\n";
 
     cout << "   4(qizzes score 1)  5(qizzes score 2)    6(mid-term score)" << "\n\n";
 
-    cout << "   7(final score)     8(total score)" << "\n";
+    cout << "   7(final score)" << "\n";
 
     cout << "=== input only take numbers. in range of 1 & 9! ===" << "\n\n";
 
     int choice;
     retry:
+    cout << "menu: ";
     while(cin >> choice) {
         if(choice < 1 || choice > 9) {
             cout << "what is wrong with you? read the description!";
@@ -249,15 +453,39 @@ int main() {
         switch(choice) {
             case 1:
                 add_record();
+                cout << "menu: ";
                 break;
             case 2:
                 delete_record();
+                cout << "menu: ";
                 break;
             case 3:
                 add_record();
+                cout << "menu: ";
                 break;
             case 4:
                 view_student_record();
+                cout << "menu: ";
+                break;
+            case 5:
+                average_score();
+                cout << "menu: ";
+                break;
+            case 6:
+                total_score_view();
+                cout << "menu: ";
+                break;
+            case 7:
+                display_score();
+                cout << "menu: ";
+                break;
+            case 8:
+                id_sort();
+                cout << "menu: ";
+                break;
+            case 9:
+                total_score_sort();
+                cout << "menu: ";
                 break;
         }
     }
