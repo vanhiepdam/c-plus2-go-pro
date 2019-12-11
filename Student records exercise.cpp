@@ -107,7 +107,7 @@ void load_record() {
     load.open("total_score.text");
     for(int c = 0; c < n; c++) {
         load >> total_score.at(c);
-    }1
+    }
     load.close();
     cout << "done." << endl;
 }
