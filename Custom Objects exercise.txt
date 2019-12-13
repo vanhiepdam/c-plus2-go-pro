@@ -1,0 +1,268 @@
+1. Given the definition of the SimpleRational number class in Listing 14.5 (simplerational.cpp),
+complete the function named add:
+SimpleRational add(SimpleRational r1, SimpleRational r2) {
+	// Details go here
+	int denominator_sum = r1.get_denominator() * r2.get_denominator();
+	return Simplerational(r1.get_numerator * (denominator_sum / r1.get_denominator()) + r2.get_numerator * (denominator_sum / r2.get_denominator()), denominator_sum);	
+}
+that returns the rational number representing the sum of its two parameters. Recall that adding fractions is more involved than multiplying them; you must find a common denominator, adjust the
+fractions so they both have the same denominator, and then add just the numerators.
+2. Given the definition of the geometric Point class in Listing 15.6 (point.cpp), complete the function
+named distance:
+double distance(Point r1, Point r2) {
+	// Details go here
+	return sqrt((r1.get_x() - r2.get_x()) * (r1.get_(x) - r2.get_x()) + (r1.get_y() - r2.get_y()) * (r1.get_y() - r2.get(y)));
+}
+that returns the distance between the two points passed as parameters.
+3. What is the purpose of a class constructor?
+	to receive initialize information from the caller
+4. May a class constructor be overloaded?
+	yes
+5. Given the definition of the SimpleRational number class in Section 14.3, complete the following
+method named reduce:
+class SimpleRational {
+// Other details omitted here ...
+// Returns an object of the same value reduced
+// to lowest terms
+SimpleRational reduce() {
+	// Details go here
+	int highest_divisible;
+	if(numerator < denominator) {
+		for(int c = 1; c <= numerator; c++) {
+			if(numerator % c == 0 && denominator % c == 0) {
+				highest_divisible = c;
+			}
+		}
+	} else {
+		for(int c = 1; c <= denominator; c++) {
+			if(numerator % c == 0 && denominator % c == 0) {
+				highest_divisible = c;
+			}
+		}
+	}
+	set_numerator(numerator / highest_divisible);
+	set_denominator(denominator / highest_divisible);
+}
+};
+that returns the rational number that represents the object reduced to lowest terms; for example, the
+fraction 10/20 would be reduced to 1/2.
+6. Given the definition of the SimpleRational number class in Section 14.3, complete the following
+free function named reduce:
+// Returns a fraction to lowest terms
+SimpleRational reduce(SimpleRational f) {
+	// Details go here
+	int highest_divisible;
+	int numerator = f.get_numerator, denominator = f.get_denominator;
+	if(numerator < denominator) {
+		for(int c = 1; c <= numerator; c++) {
+			if(numerator % c == 0 && denominator % c == 0) {
+				highest_divisible = c;
+			}
+		}
+	} else {
+		for(int c = 1; c <= denominator; c++) {
+			if(numerator % c == 0 && denominator % c == 0) {
+				highest_divisible = c;
+			}
+		}
+	}
+	f.set_numerator(numerator / highest_divisible);
+	f.set_denominator(denominator / highest_divisible);
+}
+that returns the rational number that represents the object reduced to lowest terms; for example, the
+fraction 10/20 would be reduced to 1/2.
+7. Given the definition of the geometric Point class in Section 14.2 add a method named distance:
+class Point {
+// Other details omitted
+// Returns the distance from this point to the
+// parameter p
+double distance(Point p) {
+// Details go here
+}
+};
+that returns the distance between the point on whose behalf the method is called and the parameter p.
+8. Consider the following C++ code:
+#include <iostream>
+class IntPoint {
+public:
+int x;
+int y;
+IntPoint(int x, int y): x(x), y(y) {}
+};
+class Rectangle {
+IntPoint corner; // Location of the rectangle's lower-left corner
+int width; // The rectangle's width
+int height; // The rectangle's width
+public:
+Rectangle(IntPoint pt, int w, int h):
+corner((pt.x < -100) ? -100 : (pt.x > 100 ? 100 : pt.x),
+(pt.y < -100) ? -100 : (pt.y > 100 ? 100 : pt.y)),
+width((w < 0) ? 0 : w), height((h < 0) ? 0 : h) {}
+int perimeter() {
+return 2*width + 2*height;
+}
+int area() {
+return width * height;
+}
+int get_width() {
+return width;
+}
+int get_height() {
+return height;
+}
+// Returns true if rectangle r overlaps this
+// rectangle object.
+bool intersect(Rectangle r) {
+// Details omitted
+}
+// Returns the length of a diagonal rounded to the nearest
+// integer.
+int diagonal() {
+// Details omitted
+}
+// Returns the geometric center of the rectangle with
+// the (x,y) coordinates rounded to the nearest integer.
+IntPoint center() {
+// Details omitted
+}
+bool is_inside(IntPoint pt) {
+// Details omitted
+}
+};
+int main() {
+Rectangle rect1(IntPoint(2, 3), 5, 7),
+rect2(IntPoint(2, 3), 1, 3),
+rect3(IntPoint(2, 3), 15, 3),
+rect4(IntPoint(2, 3), 5, 3);
+std::cout << rect1.get_width() << '\n';
+std::cout << rect1.get_height() << '\n';
+std::cout << rect2.get_width() << '\n';
+std::cout << rect2.get_height() << '\n';
+std::cout << rect3.get_width() << '\n';
+std::cout << rect3.get_height() << '\n';
+std::cout << rect4.get_width() << '\n';
+std::cout << rect4.get_height() << '\n';
+std::cout << rect1.get_perimeter() << '\n';
+std::cout << rect1.get_area() << '\n';
+std::cout << rect2.get_perimeter() << '\n';
+std::cout << rect2.get_area() << '\n';
+std::cout << rect3.get_perimeter() << '\n';
+std::cout << rect3.get_area() << '\n';
+std::cout << rect4.get_perimeter() << '\n';
+std::cout << rect4.get_area() << '\n';
+}
+(a) What does the program print?
+	print all the information about reactangle 1 2 3 4
+(b) With regard to a Rectangle object’s lower-left corner, what are the minimum and maximum
+values allowed for the x coordinate? What are the minimum and maximum values allowed for
+the y coordinate?
+	both x and y are -100 and 100
+(c) What is a Rectangle object’s minimum and maximum width?
+	minium width is 0, there are no maximum width
+(d) What is a Rectangle object’s minimum and maximum height?
+	minium width is 0, there are no maximum height
+(e) What happens when a client attempts to create a Rectangle object with parameters that are
+outside the acceptable ranges?
+	then the parameter be set to maximum or minimum range it surpassed
+(f) Implement the diagonal method.
+	int diagonal() {
+		return sqrt(width*width + height*height);
+	}
+(g) Implement the center method.
+	IntPoint center() {
+		return (width / 2, height / 2);
+	}
+(h) Implement the intersect method.
+	bool intersect(Rectangle r) {
+		return ((get_width > r.get_width && get_height < r.get_height) || (get_width < r.get_width && get_height > r.get_height));
+	}
+(i) Implement the is_inside method.
+	bool intersect(Rectangle r) {
+		return (r.get_width < get_width && r.get_height < get_height);
+	}
+(j) Complete the following function named corner:
+IntPoint corner(Rectangle r) {
+	// Details go here
+	return (r.pt.x, r.pt.y);
+};
+that returns the lower-left corner of the Rectangle object r passed to it. You may not modify
+the Rectangle class.
+(k)
+9. Develop a Circle class that, like the Rectangle class above, provides methods to compute
+perimeter and area. The Rectangle instance variables are not appropriate for circles; specifically, circles do have corners, and there is no need to specify a width and height. A center point and
+a radius more naturally describe a circle. Build your Circle class appropriately.
+class Circle{
+	int center_point = 0;
+	double radius;
+	public:
+	Circle(double radio) {
+		radius = ((radio < 1000) ? 1000 : (radio > 0 ? radio : 0));
+    }
+    void set_radius(double input) {
+        radius = input;
+    }
+	double get_radius() {
+		return radius;
+	}
+    double perimeter() {
+        return 2 * 3.14 * radius;
+    }
+    double area() {
+        return radius * radius * 3.14;
+    }
+};
+10. Given the Rectangle and Circle classes from questions above, write an encloses function:
+// Returns true if rectangle rect is large enough to
+// completely enclose circle circ
+bool encloses(Rectangle rect, Circle circ) {
+// Details omitted
+	return (rect.get_width() > circ.get_radius() && rect.get_height() > circ.radius());
+}
+so that it returns true if circle circ’s dimensions would allow it to fit completely within rectangle
+rect. If circ is too big, the function returns false. The positions of rect and circ do not
+influence the result.
+11. Consider the following C++ code:
+class Widget {
+int value;
+public:
+Widget();
+Widget(int v);
+int get();
+void bump();
+};
+Widget::Widget() {
+value = 40;
+}
+Widget::Widget(int v) {
+if (v >= 40)
+value = v;
+else
+value = 0;
+}
+int Widget::get() const {
+return value;
+}
+void Widget::bump() {
+if (value < 50)
+value++;
+}
+int main() {
+Widget w1, w2(5);
+std::cout << w1.get() << '\n';
+std::cout << w2.get() << '\n';
+w1.bump(); w2.bump();
+std::cout << w1.get() << '\n';
+std::cout << w2.get() << '\n';
+for (int i = 0; i < 20; i++) {
+w1.bump();
+w2.bump();
+}
+std::cout << w1.get() << '\n';
+std::cout << w2.get() << '\n';
+}
+(a) What does the program print?
+	value of called widget
+(b) If wid is a Widget object, what is the minimum value the expression wid.get() can return?
+	0
+(c) If wid is a Widget object, what is the maximum value the expression wid.get() can return?
+	50
