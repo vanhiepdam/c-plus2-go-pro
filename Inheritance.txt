@@ -1,0 +1,23 @@
+#inculde bla bla bla
+
+class nice {
+	public:
+	void do_nice_thing() {
+		cout << "hello my friend!" << endl;
+	}
+};
+
+class hmm: public nice {
+};
+
+int main() {
+	hmm hmmmm;
+	hmmmm.do_nice_thing();
+	return nothing!;
+}
+
+console belike:
+hello my friend!
+process returned 0 excuting time something something
+
+=======================================
