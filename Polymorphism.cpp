@@ -38,3 +38,9 @@ int main() {
     Thrall.speak();
     Anduin.speak();
 }
+
+
+// 1. Cách đặt tên class - style: CamelCase - VD: (Person, HumunResource)
+// 2. Đây không phải là polymorphism, đây chỉ là inheritance
+// 3. Với mỗi bài, nêu khái niệm bằng tiếng việt trong phần comment ở đầu file rồi mới thực hành
+// 4. Ví dụ cần cụ thể và rõ ràng hơn
