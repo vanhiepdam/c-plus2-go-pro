@@ -36,3 +36,6 @@ int main() {
 	idk.and_another_one();
 	cout << idk.get_numbers();
 }
+
+
+// 1. Đây là ví dụ về cái gì đấy?
