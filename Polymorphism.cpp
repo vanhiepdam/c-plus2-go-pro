@@ -1,46 +1,43 @@
+//khái niệm: polymorphism có nghĩa là nhiều dạng.
 #include <iostream>
+#include <string>
 
 using namespace std;
-
-class quote {
+// ví dụ 1: printer print nhiều dạng giá trị.
+class Print {
     public:
-        void speak() {
-            cout << "command me, master." << endl;
+        void print(int c) {
+            cout << c << endl;
+        }
+        void print(double c) {
+            cout << c << endl;
+        }
+        void print(string c) {
+            cout << c << endl;
         }
 };
-
-class undead: public quote {
+// ví dụ 2: kế thừa cout nhưng cout của class con có content khác với cout của class cha
+class Yasuo {
     public:
-        void speak() {
-            cout << "i serve only the frozen throne." << endl;
+        virtual void speak() { // virtual ở đây là để sau đó các class con có thể override function này
+            cout << "Death is like the wind. Always by my side.";
         }
 };
-
-class orc: public quote {
+class Rengar: public Yasuo {
     public:
         void speak() {
-            cout << "for the horde!" << endl;
-        }
-};
-
-class human: public quote {
-    public:
-        void speak() {
-            cout << "for the alliance!" << endl;
+            cout << "Nothing will escape.";
         }
 };
 
 int main() {
-    undead KelThuzad;
-    orc Thrall;
-    human Anduin;
-    KelThuzad.speak();
-    Thrall.speak();
-    Anduin.speak();
+    Print test;
+    test.print("test.");
+    test.print(24);
+    test.print(3.2);
+
+    Yasuo* cptr;
+    Rengar rengar;
+    cptr = &rengar;
+    cptr->speak(); // cái này được gọi là runtime polymorphism
 }
-
-
-// 1. Cách đặt tên class - style: CamelCase - VD: (Person, HumunResource)
-// 2. Đây không phải là polymorphism, đây chỉ là inheritance
-// 3. Với mỗi bài, nêu khái niệm bằng tiếng việt trong phần comment ở đầu file rồi mới thực hành
-// 4. Ví dụ cần cụ thể và rõ ràng hơn

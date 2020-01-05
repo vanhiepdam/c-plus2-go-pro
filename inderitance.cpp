@@ -1,41 +1,41 @@
+/*
+khái niệm:
+    kế thừa tính chất và đặc điểm
+*/
 #include <iostream>
-#include <vector>
-#include <string>
-#include <fstream>
 
 using namespace std;
 
-class add {
-	protected:
-        int numbers;
-	public:
-        add(int a = 0) {
-            numbers = a;
-        }
-        void another_one() {
-            numbers++;
-        }
-        int get_numbers() {
-            return numbers;
-        }
-};
-
-class add_2: public add {
+class Base {
     public:
-        add_2(int a = 0) {
-            numbers = a;
-        }
-        void and_another_one() {
-            numbers++;
-        }
+        int strength;
+        int agility;
+        int intelligent;
+        int dexterity;
+        int combat_speed;
+        int movement_speed;
+        int resistance;
+        int spell_power;
+        int mana;
 };
 
-int main() {
-	add_2 idk(10);
-	idk.another_one();
-	idk.and_another_one();
-	cout << idk.get_numbers();
-}
+class Warrior: public Base {
+};
 
+class Archer: public Base {
+};
 
-// 1. Đây là ví dụ về cái gì đấy?
+class Thief: public Base {
+};
+
+class Mage: public Base {
+};
+
+class Warlock: public Base {
+};
+
+class Paladin: public Base {
+};
+// tất cả class trên ngoài class Base đều thừa hưởng tính chất và đặc điểm của class Base.
+// 1 ví dụ về sự dụng inheritance để thay cho việc copy/paste code, và sử dụng inheritance cũng tránh việc loạn code và dễ kiểm soát code hơn.
+
