@@ -1,0 +1,218 @@
+1. Suppose Widget is a class of objects, and function proc accepts a single Widget object as a
+parameter. Without knowing anything about class Widget, which of the following definitions of
+function proc is considered better, and why?
+	Option #1:
+		void proc(Widget obj) { /* Details omitted . . . */ }
+	Option #2:
+		void proc(const Widget& obj) { /* Details omitted . . . */ }
+	Answer: option #2 - without address to the object itself the function proc will make a copy of given Widget parameter and occupy unnecessary memory.
+2. Suppose you have the following definition for class Assembly:
+	class Assembly {
+		public:
+			int value;
+	};
+and the variable ptr_a declared and initialized as so:
+		Assembly *ptr_a = new Assembly;
+(a) What statement using the dot operator (.) could you use to assign 5 to the value field of the
+	object to which ptr_a points?
+	-> (*ptr_a).value = 5;
+(b) What statement using the arrow operator (->) could you use to assign 5 to the value field of
+	the object to which ptr_a points?
+	-> ptr_a->value = 5;
+3. Suppose you have the following definition for class Gadget:
+	class Gadget {
+		private:
+			int value;
+		public:
+			Gadget(int v): value(v) {}
+			int get() const {
+				return value;
+			}
+	};
+Consider the following code fragment:
+Gadget x(5);
+int y = x.get();
+	(a) What value does the second statement assign to y?
+		x->value which is 5
+	(b) Rewrite Gadget::get so it explicitly uses the this pointer.
+		int get() const {
+				return this->value;
+			}
+	(c) During the execution of Gadget::get on the second line, what is the value of the method’s
+this pointer?
+		still 5
+	(d) What can a client do to alter the value field of a Gadget object after the object’s creation?
+		nothing. After the object creation client can not change the value of a Gadget object. 
+4. What are the consequences of declaring a method to be const?
+	the method it self can not change the state of the object
+	if somehow the method contain statements that modify the object it will contain serious logic error
+5. 	Why are const methods necessary in C++?
+	you could only invoke const method in const object
+	invoke non-const method in a const object will result compile error
+6. Given the following Counter class declaration:
+	class Counter {
+		private:
+			int value;
+		public:
+			Counter(): value(0) {}
+			void increment() {
+				value++;
+			}
+			int get() const {
+				return value;
+			}
+	};
+and Counter objects declared as shown here:
+Counter c1;
+const Counter c2;
+determine if each of the following statements is legal.
+(a) c1.increment(); - legal
+	c2.increment(); - illegal
+(b) int x = c1.get(); - legal
+	int y = c2.get(); -	legal
+8. Consider the following class declaration:
+	class Counter {
+		private:
+			int value;
+		public:
+			Counter(): value(0) {}
+			void increment() {
+				value++;
+			}
+			void decrement() {
+				value--;
+			}
+			int get() const {
+				return value;
+			}
+	};
+(a) Show how you would properly separate the code of the Counter class into two source files:
+its declaration in a counter.h file and its method implementations in a counter.cpp file.
+==================================================
+consider following code in the header file:
+	class Counter {
+		private:
+			int value;
+		public:
+		Counter();
+		void increment();
+		void decrement();
+		int get() const;
+	};
+in the main file
+	Counter::Counter(): value(0) {}
+	void Counter::increment() {
+		this->value++;
+	}
+	void Counter::decrement() {
+		this->value--;
+	}
+	int Counter::get() const {
+		return this->value;
+	}
+=====================================================
+(b) Would client code ordinarily #include both the counter.h and counter.cpp files in its source
+code?
+	no. you have to include both yourself
+(c) How can you protect your counter.h file to prevent clients from accidentally #include-ing
+the contents of the header file more than once?
+	...
+(d) What advantages does separating the class declaration and method implementations provide?
+	i dont know.
+9. What are the consequences of declaring a method to be static?
+	all object in the same class will have access to the shared method
+	the static method may not access to any instance variable(that is non static-field) of the class.
+	using this pointer in a static method will result compile-time error
+10. Consider the following class declaration:
+	class ValType {
+		public:
+			int value1;
+			static int value2;
+	};
+(a) If a client creates 100 ValType objects, how many value1 fields will exist in memory?
+	100
+(b) If a client creates 100 ValType objects, how many value2 fields will exist in memory?
+	1
+11. How is a C++ struct similar to a class?
+	struct is a carryover from the C programming language
+12. How does a C++ struct differ from a class?
+	default member access for struct instances is public while class default member access is private
+13. Given the following custom type declarations:
+	class X {
+		private:
+			int value1;
+		public:
+			static int value2;
+			int value3;
+			X(): value1(5) {}
+			void f() {
+				value1 = 0;
+			}
+			static void g() {
+				value2 = 0;
+			}
+	};
+	int X::value2 = 3;
+	struct Y {
+			int quantity1;
+			Y(): quantity1(5) {}
+			void f() {
+					quantity1 = 0;
+				}
+		private:
+			int quantity2;
+	};
+and the following variable declarations:
+	X x_obj;
+	Y y_obj;
+determine if each of the following statements is legal.
+	(a) x_obj.value1 = 0; - illegal
+	(b) x_obj.value2 = 0; - legal
+	(c) x_obj.value3 = 0; - legal
+	(d) X::value1 = 0; - illegal
+	(e) X::value2 = 0; - legal
+	(f) X::value3 = 0; - illegal
+	(g) y_obj.quantity1 = 0; -	legal
+	(h) y_obj.quantity2 = 0; -	illegal
+	(i) Y::quantity1 = 0; -	illegal
+	(j) Y::quantity2 = 0; - illegal
+	(k) x_obj.f(); - legal
+	(l) x_obj.g(); - legal
+	(m) X::f(); - illegal
+	(n) X::g(); - legal
+14. What privileges does function f have with respect to the class that declares f to be its friend?
+	function f will have access to private field of the class that declared f.
+15. Consider the following class declaration:
+	class ValType {
+		private:
+			int value;
+		public:
+			ValType(): value(0) {}
+			void set(int v1) {
+				value = v1;
+			}
+		void show() const {
+			std::cout << value << '\n';
+		}
+		friend int f(const ValType& x);
+	};
+and determine the legality of each of the following function definitions:
+(a) int f(const ValType& x) {
+		return 2 * x.value;
+	} - legal
+(b) int g(const ValType& x) {
+		return 2 * x.value;
+	} - illegal
+(c) int f(const ValType& x) {
+		x.show();
+		return 0;
+	} - legal
+(d) int g(const ValType& x) {
+		x.show();
+		return 0;
+	} - legal
+(e) int f(const ValType& x, int n) {
+		return n * x.value;
+	} - illegal
+16. What are the risks associated with using the friend con
+	no risk if the developer use it properly
