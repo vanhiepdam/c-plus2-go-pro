@@ -2,6 +2,7 @@
 khái niệm:
     kế thừa tính chất và đặc điểm
 */
+//
 #include <iostream>
 
 using namespace std;
