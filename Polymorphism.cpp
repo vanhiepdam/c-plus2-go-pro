@@ -41,3 +41,5 @@ int main() {
     cptr = &rengar;
     cptr->speak(); // cái này được gọi là runtime polymorphism
 }
+
+// chưa hiểu về đa 
