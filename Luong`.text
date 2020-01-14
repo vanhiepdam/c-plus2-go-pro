@@ -1,0 +1,34 @@
+Luồng:
+
+Màn hình chính (1)
+
+Chọn hành động:
+1. Đăng nhập
+2. Nạp tiền cho máy atm
+3. Thêm người dùng
+4. Xóa người dùng
+
+
+Màn hình sau khi đăng nhập (2)
+
+Chọn hành động
+1. Xem thông tin
+2. Sửa thông tin
+3. Rút tiền -> Chọn số tiền muốn rút -> Kiểm tra số tiền hợp lệ hay ko -> Trả về kết quả -> Hỏi xem có muốn tiếp tục hay không? -> Nếu có -> Trở về màn hình (2)
+4. Chuyển tiền -> Nhập stk ngừoi nhận -> nhập số tiền -> kiểm tra tính hợp lệ của số tiền -> Hỏi xem có muốn tiếp tục hay không? -> Nếu có -> Trở về màn hình (2)
+5. Đăng xuất
+
+Màn hình nạp tiền cho máy atm (3)
+
+Hiển thị số tiền hiện tại bao gồm tổng tiền, số tờ tiền theo mệnh giá
+
+Chọn hành động:
+1. Nạp tiền
+	Chọn mệnh giá: 10, 20, 50..
+	Chọn số tờ: 1,2,3,4,5
+Tính lại tổng số tiền
+
+
+Màn hình thêm người dùng (4)
+
+Nhập thông tin: tên, stk, số tiền

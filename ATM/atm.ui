@@ -1,0 +1,3207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ATM</class>
+ <widget class="QMainWindow" name="ATM">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>450</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>ATM</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <widget class="QStackedWidget" name="stackedWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>800</width>
+      <height>450</height>
+     </rect>
+    </property>
+    <widget class="QWidget" name="main_screen">
+     <widget class="QLabel" name="credit">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>0</y>
+        <width>500</width>
+        <height>90</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>UI/credit.png</pixmap>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_delete_account">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>182</y>
+        <width>300</width>
+        <height>45</height>
+       </rect>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 16pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+alternate-background-color: rgb(4, 168, 217);
+selection-color: rgb(10, 69, 127);
+background-color: qlineargradient(spread:pad, x1:0.25, y1:0.528682, x2:1, y2:0.551, stop:0 rgba(7, 56, 99, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string>Xóa tài khoản</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_add_account">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>136</y>
+        <width>300</width>
+        <height>45</height>
+       </rect>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 16pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+alternate-background-color: rgb(4, 168, 217);
+selection-color: rgb(10, 69, 127);
+background-color: qlineargradient(spread:pad, x1:0.25, y1:0.528682, x2:1, y2:0.551, stop:0 rgba(7, 56, 99, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string>Tạo tài khoản</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_atm_add_money">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>228</y>
+        <width>300</width>
+        <height>45</height>
+       </rect>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 16pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+alternate-background-color: rgb(4, 168, 217);
+selection-color: rgb(10, 69, 127);
+background-color: qlineargradient(spread:pad, x1:0.25, y1:0.528682, x2:1, y2:0.551, stop:0 rgba(7, 56, 99, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string>Nạp tiền cho máy</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_login">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>90</y>
+        <width>300</width>
+        <height>45</height>
+       </rect>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 16pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+alternate-background-color: rgb(4, 168, 217);
+selection-color: rgb(10, 69, 127);
+background-color: qlineargradient(spread:pad, x1:0.25, y1:0.528682, x2:1, y2:0.551, stop:0 rgba(7, 56, 99, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string>Đăng nhập</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="screen">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>800</width>
+        <height>450</height>
+       </rect>
+      </property>
+      <property name="autoFillBackground">
+       <bool>true</bool>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>UI/screen.png</pixmap>
+      </property>
+     </widget>
+     <widget class="QLabel" name="main_screen_label">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>70</y>
+        <width>111</width>
+        <height>19</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 75 11pt &quot;MS Shell Dlg 2&quot;;
+color: rgb(76, 255, 255);
+alternate-background-color: rgb(4, 168, 217);
+selection-color: rgb(10, 69, 127);
+background-color: qlineargradient(spread:pad, x1:0.25, y1:0.528682, x2:1, y2:0.551, stop:0 rgba(7, 56, 99, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string> Màn hình chính</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_atm_quit">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>274</y>
+        <width>300</width>
+        <height>45</height>
+       </rect>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 16pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+alternate-background-color: rgb(4, 168, 217);
+selection-color: rgb(10, 69, 127);
+background-color: qlineargradient(spread:pad, x1:0.25, y1:0.528682, x2:1, y2:0.551, stop:0 rgba(7, 56, 99, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string>Lưu dữ liệu và thoát</string>
+      </property>
+     </widget>
+     <zorder>screen</zorder>
+     <zorder>credit</zorder>
+     <zorder>pushButton_login</zorder>
+     <zorder>pushButton_delete_account</zorder>
+     <zorder>pushButton_atm_add_money</zorder>
+     <zorder>pushButton_add_account</zorder>
+     <zorder>main_screen_label</zorder>
+     <zorder>pushButton_atm_quit</zorder>
+    </widget>
+    <widget class="QWidget" name="login_screen">
+     <widget class="QLabel" name="screen_2">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>800</width>
+        <height>450</height>
+       </rect>
+      </property>
+      <property name="autoFillBackground">
+       <bool>true</bool>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>UI/screen.png</pixmap>
+      </property>
+     </widget>
+     <widget class="QLabel" name="credit_2">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>0</y>
+        <width>500</width>
+        <height>90</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>UI/credit.png</pixmap>
+      </property>
+     </widget>
+     <widget class="QLabel" name="login_account_number">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>90</y>
+        <width>160</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 16pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+alternate-background-color: rgb(4, 168, 217);
+selection-color: rgb(10, 69, 127);
+background-color: qlineargradient(spread:pad, x1:0.25, y1:0.528682, x2:1, y2:0.551, stop:0 rgba(7, 56, 99, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string> Số tài khoản           :</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="login_password">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>152</y>
+        <width>160</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 16pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+alternate-background-color: rgb(4, 168, 217);
+selection-color: rgb(10, 69, 127);
+background-color: qlineargradient(spread:pad, x1:0.25, y1:0.528682, x2:1, y2:0.551, stop:0 rgba(7, 56, 99, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string> Mật khẩu                 :</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="login_account_number_line">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>90</y>
+        <width>210</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 14pt &quot;Microsoft YaHei&quot;;
+color: rgb(76, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(20, 81, 135, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="password_line">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>152</y>
+        <width>210</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 14pt &quot;Microsoft YaHei&quot;;
+color: rgb(76, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(20, 81, 135, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="login_login">
+      <property name="geometry">
+       <rect>
+        <x>320</x>
+        <y>59</y>
+        <width>80</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 16pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(20, 81, 135, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string>Nhập</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="login_return">
+      <property name="geometry">
+       <rect>
+        <x>239</x>
+        <y>59</y>
+        <width>80</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 16pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(20, 81, 135, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string>Quay lại</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="input_account_number_report">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>121</y>
+        <width>370</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 12pt &quot;MS Reference Sans Serif&quot;;
+color: rgb(255, 105, 75);
+alternate-background-color: rgb(4, 168, 217);
+selection-color: rgb(10, 69, 127);
+background-color: qlineargradient(spread:pad, x1:0.006, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(7, 56, 99, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="input_password_report">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>183</y>
+        <width>370</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 12pt &quot;MS Reference Sans Serif&quot;;
+color: rgb(255, 105, 75);
+alternate-background-color: rgb(4, 168, 217);
+selection-color: rgb(10, 69, 127);
+background-color: qlineargradient(spread:pad, x1:0.006, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(7, 56, 99, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="login_label">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>71</y>
+        <width>80</width>
+        <height>19</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 75 11pt &quot;MS Shell Dlg 2&quot;;
+color: rgb(76, 255, 255);
+alternate-background-color: rgb(4, 168, 217);
+selection-color: rgb(10, 69, 127);
+background-color: qlineargradient(spread:pad, x1:0.25, y1:0.528682, x2:1, y2:0.551, stop:0 rgba(7, 56, 99, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string> Đăng nhập</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="login_password_censor">
+      <property name="geometry">
+       <rect>
+        <x>401</x>
+        <y>152</y>
+        <width>30</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 75 17pt &quot;Microsoft Tai Le&quot;;
+color: rgb(76, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(20, 81, 135, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string>✔</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="login_account_number_line_2">
+      <property name="geometry">
+       <rect>
+        <x>401</x>
+        <y>90</y>
+        <width>30</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 14pt &quot;Microsoft YaHei&quot;;
+color: rgb(76, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(20, 81, 135, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="logged_in_screen">
+     <widget class="QLabel" name="credit_3">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>0</y>
+        <width>500</width>
+        <height>90</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>UI/credit.png</pixmap>
+      </property>
+     </widget>
+     <widget class="QLabel" name="screen_3">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>800</width>
+        <height>450</height>
+       </rect>
+      </property>
+      <property name="autoFillBackground">
+       <bool>true</bool>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>UI/screen.png</pixmap>
+      </property>
+     </widget>
+     <widget class="QLabel" name="logged_in_label">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>71</y>
+        <width>118</width>
+        <height>19</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 75 11pt &quot;MS Shell Dlg 2&quot;;
+color: rgb(76, 255, 255);
+alternate-background-color: rgb(4, 168, 217);
+selection-color: rgb(10, 69, 127);
+background-color: qlineargradient(spread:pad, x1:0.25, y1:0.528682, x2:1, y2:0.551, stop:0 rgba(7, 56, 99, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string> Chọn hành động</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="withdraw_button">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>90</y>
+        <width>300</width>
+        <height>45</height>
+       </rect>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 16pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+alternate-background-color: rgb(4, 168, 217);
+selection-color: rgb(10, 69, 127);
+background-color: qlineargradient(spread:pad, x1:0.25, y1:0.528682, x2:1, y2:0.551, stop:0 rgba(7, 56, 99, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string>Rút tiền</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="transfer_money_button">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>182</y>
+        <width>300</width>
+        <height>45</height>
+       </rect>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 16pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+alternate-background-color: rgb(4, 168, 217);
+selection-color: rgb(10, 69, 127);
+background-color: qlineargradient(spread:pad, x1:0.25, y1:0.528682, x2:1, y2:0.551, stop:0 rgba(7, 56, 99, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string>Chuyển tiền</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="account_information_button">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>228</y>
+        <width>300</width>
+        <height>45</height>
+       </rect>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 16pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+alternate-background-color: rgb(4, 168, 217);
+selection-color: rgb(10, 69, 127);
+background-color: qlineargradient(spread:pad, x1:0.25, y1:0.528682, x2:1, y2:0.551, stop:0 rgba(7, 56, 99, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string>Xem thông tin</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="edit_information_button">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>274</y>
+        <width>300</width>
+        <height>45</height>
+       </rect>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 16pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+alternate-background-color: rgb(4, 168, 217);
+selection-color: rgb(10, 69, 127);
+background-color: qlineargradient(spread:pad, x1:0.25, y1:0.528682, x2:1, y2:0.551, stop:0 rgba(7, 56, 99, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string>Sửa thông tin</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="logout_button">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>320</y>
+        <width>300</width>
+        <height>45</height>
+       </rect>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 16pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+alternate-background-color: rgb(4, 168, 217);
+selection-color: rgb(10, 69, 127);
+background-color: qlineargradient(spread:pad, x1:0.25, y1:0.528682, x2:1, y2:0.551, stop:0 rgba(7, 56, 99, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string>Đăng xuất</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="add_money_button">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>136</y>
+        <width>300</width>
+        <height>45</height>
+       </rect>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 16pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+alternate-background-color: rgb(4, 168, 217);
+selection-color: rgb(10, 69, 127);
+background-color: qlineargradient(spread:pad, x1:0.25, y1:0.528682, x2:1, y2:0.551, stop:0 rgba(7, 56, 99, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string>Nạp tiền</string>
+      </property>
+     </widget>
+     <zorder>screen_3</zorder>
+     <zorder>credit_3</zorder>
+     <zorder>logged_in_label</zorder>
+     <zorder>withdraw_button</zorder>
+     <zorder>transfer_money_button</zorder>
+     <zorder>account_information_button</zorder>
+     <zorder>edit_information_button</zorder>
+     <zorder>logout_button</zorder>
+     <zorder>add_money_button</zorder>
+    </widget>
+    <widget class="QWidget" name="add_account_screen">
+     <widget class="QLabel" name="credit_4">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>0</y>
+        <width>500</width>
+        <height>90</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>UI/credit.png</pixmap>
+      </property>
+     </widget>
+     <widget class="QLabel" name="screen_4">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>800</width>
+        <height>450</height>
+       </rect>
+      </property>
+      <property name="autoFillBackground">
+       <bool>true</bool>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>UI/screen.png</pixmap>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="add_account_number_line">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>90</y>
+        <width>210</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 14pt &quot;Microsoft YaHei&quot;;
+color: rgb(76, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(20, 81, 135, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="add_account_number">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>90</y>
+        <width>160</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 16pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+alternate-background-color: rgb(4, 168, 217);
+selection-color: rgb(10, 69, 127);
+background-color: qlineargradient(spread:pad, x1:0.25, y1:0.528682, x2:1, y2:0.551, stop:0 rgba(7, 56, 99, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string> Số tài khoản           :</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="add_account_label">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>70</y>
+        <width>100</width>
+        <height>19</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 75 11pt &quot;MS Shell Dlg 2&quot;;
+color: rgb(76, 255, 255);
+alternate-background-color: rgb(4, 168, 217);
+selection-color: rgb(10, 69, 127);
+background-color: qlineargradient(spread:pad, x1:0.25, y1:0.528682, x2:1, y2:0.551, stop:0 rgba(7, 56, 99, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string> Tạo tài khoản</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="add_account_username">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>152</y>
+        <width>160</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 16pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+alternate-background-color: rgb(4, 168, 217);
+selection-color: rgb(10, 69, 127);
+background-color: qlineargradient(spread:pad, x1:0.25, y1:0.528682, x2:1, y2:0.551, stop:0 rgba(7, 56, 99, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string>  Tên tài khoản        :</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="add_account_username_line">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>152</y>
+        <width>210</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 14pt &quot;Microsoft YaHei&quot;;
+color: rgb(76, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(20, 81, 135, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="add_account_account_number_report">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>121</y>
+        <width>370</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 12pt &quot;MS Reference Sans Serif&quot;;
+color: rgb(255, 105, 75);
+alternate-background-color: rgb(4, 168, 217);
+selection-color: rgb(10, 69, 127);
+background-color: qlineargradient(spread:pad, x1:0.006, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(7, 56, 99, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="add_account_username_report">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>183</y>
+        <width>370</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 12pt &quot;MS Reference Sans Serif&quot;;
+color: rgb(255, 105, 75);
+alternate-background-color: rgb(4, 168, 217);
+selection-color: rgb(10, 69, 127);
+background-color: qlineargradient(spread:pad, x1:0.006, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(7, 56, 99, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="add_account_password_report">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>245</y>
+        <width>370</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 12pt &quot;MS Reference Sans Serif&quot;;
+color: rgb(255, 105, 75);
+alternate-background-color: rgb(4, 168, 217);
+selection-color: rgb(10, 69, 127);
+background-color: qlineargradient(spread:pad, x1:0.006, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(7, 56, 99, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="add_account_password">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>214</y>
+        <width>160</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 16pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+alternate-background-color: rgb(4, 168, 217);
+selection-color: rgb(10, 69, 127);
+background-color: qlineargradient(spread:pad, x1:0.25, y1:0.528682, x2:1, y2:0.551, stop:0 rgba(7, 56, 99, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string>  Mật khẩu                :</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="add_account_password_line">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>214</y>
+        <width>210</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 14pt &quot;Microsoft YaHei&quot;;
+color: rgb(76, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(20, 81, 135, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="add_account_confirm">
+      <property name="geometry">
+       <rect>
+        <x>320</x>
+        <y>59</y>
+        <width>80</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 16pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(20, 81, 135, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string>Nhập</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="add_account_return">
+      <property name="geometry">
+       <rect>
+        <x>239</x>
+        <y>59</y>
+        <width>80</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 16pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(20, 81, 135, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string>Quay lại</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="add_account_final_report">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>338</y>
+        <width>370</width>
+        <height>45</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 17pt &quot;MS Reference Sans Serif&quot;;
+color: rgb(76, 255, 255);
+alternate-background-color: rgb(4, 168, 217);
+selection-color: rgb(10, 69, 127);
+background-color: qlineargradient(spread:pad, x1:0.006, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(7, 56, 99, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="add_account_continue">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>158</x>
+        <y>59</y>
+        <width>80</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 16pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(20, 81, 135, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string>Làm mới</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="add_account_balance_report">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>307</y>
+        <width>370</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 12pt &quot;MS Reference Sans Serif&quot;;
+color: rgb(255, 105, 75);
+alternate-background-color: rgb(4, 168, 217);
+selection-color: rgb(10, 69, 127);
+background-color: qlineargradient(spread:pad, x1:0.006, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(7, 56, 99, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="add_account_password_2">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>276</y>
+        <width>160</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 16pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+alternate-background-color: rgb(4, 168, 217);
+selection-color: rgb(10, 69, 127);
+background-color: qlineargradient(spread:pad, x1:0.25, y1:0.528682, x2:1, y2:0.551, stop:0 rgba(7, 56, 99, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string>  Số tiền                     :</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="add_account_balance_line">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>276</y>
+        <width>210</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 14pt &quot;Microsoft YaHei&quot;;
+color: rgb(76, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(20, 81, 135, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="add_account_password_censor">
+      <property name="geometry">
+       <rect>
+        <x>401</x>
+        <y>214</y>
+        <width>30</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 75 17pt &quot;Microsoft Tai Le&quot;;
+color: rgb(76, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(20, 81, 135, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string>✔</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="add_account_account_number_report_2">
+      <property name="geometry">
+       <rect>
+        <x>401</x>
+        <y>90</y>
+        <width>30</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 14pt &quot;Microsoft YaHei&quot;;
+color: rgb(76, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(20, 81, 135, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="add_account_balance_report_2">
+      <property name="geometry">
+       <rect>
+        <x>401</x>
+        <y>276</y>
+        <width>30</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 14pt &quot;Microsoft YaHei&quot;;
+color: rgb(76, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(20, 81, 135, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <zorder>screen_4</zorder>
+     <zorder>credit_4</zorder>
+     <zorder>add_account_number_line</zorder>
+     <zorder>add_account_number</zorder>
+     <zorder>add_account_label</zorder>
+     <zorder>add_account_username</zorder>
+     <zorder>add_account_username_line</zorder>
+     <zorder>add_account_account_number_report</zorder>
+     <zorder>add_account_username_report</zorder>
+     <zorder>add_account_password_report</zorder>
+     <zorder>add_account_password</zorder>
+     <zorder>add_account_password_line</zorder>
+     <zorder>add_account_confirm</zorder>
+     <zorder>add_account_return</zorder>
+     <zorder>add_account_final_report</zorder>
+     <zorder>add_account_continue</zorder>
+     <zorder>add_account_balance_report</zorder>
+     <zorder>add_account_password_2</zorder>
+     <zorder>add_account_balance_line</zorder>
+     <zorder>add_account_password_censor</zorder>
+     <zorder>add_account_account_number_report_2</zorder>
+     <zorder>add_account_balance_report_2</zorder>
+    </widget>
+    <widget class="QWidget" name="withdraw_screen">
+     <widget class="QLabel" name="credit_5">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>0</y>
+        <width>500</width>
+        <height>90</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>UI/credit.png</pixmap>
+      </property>
+     </widget>
+     <widget class="QLabel" name="screen_5">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>800</width>
+        <height>450</height>
+       </rect>
+      </property>
+      <property name="autoFillBackground">
+       <bool>true</bool>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>UI/screen.png</pixmap>
+      </property>
+     </widget>
+     <widget class="QLabel" name="withdraw_report">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>121</y>
+        <width>370</width>
+        <height>45</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 14pt &quot;MS Reference Sans Serif&quot;;
+color: rgb(76, 255, 255);
+alternate-background-color: rgb(4, 168, 217);
+selection-color: rgb(10, 69, 127);
+background-color: qlineargradient(spread:pad, x1:0.006, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(7, 56, 99, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="withdraw_hint">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>90</y>
+        <width>160</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 16pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+alternate-background-color: rgb(4, 168, 217);
+selection-color: rgb(10, 69, 127);
+background-color: qlineargradient(spread:pad, x1:0.25, y1:0.528682, x2:1, y2:0.551, stop:0 rgba(7, 56, 99, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string>  Số tiền muốn rút :</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="withdraw_label">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>70</y>
+        <width>61</width>
+        <height>19</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 75 11pt &quot;MS Shell Dlg 2&quot;;
+color: rgb(76, 255, 255);
+alternate-background-color: rgb(4, 168, 217);
+selection-color: rgb(10, 69, 127);
+background-color: qlineargradient(spread:pad, x1:0.25, y1:0.528682, x2:1, y2:0.551, stop:0 rgba(7, 56, 99, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string> Rút tiền</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="withdraw_line_2">
+      <property name="geometry">
+       <rect>
+        <x>401</x>
+        <y>90</y>
+        <width>30</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 14pt &quot;Microsoft YaHei&quot;;
+color: rgb(76, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(20, 81, 135, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="withdraw_line">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>90</y>
+        <width>210</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 14pt &quot;Microsoft YaHei&quot;;
+color: rgb(76, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(20, 81, 135, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="withdraw_refresh_button">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>158</x>
+        <y>59</y>
+        <width>80</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 16pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(20, 81, 135, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string>Làm mới</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="withdraw_return_button">
+      <property name="geometry">
+       <rect>
+        <x>239</x>
+        <y>59</y>
+        <width>80</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 16pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(20, 81, 135, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string>Quay lại</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="withdraw_confirm_button">
+      <property name="geometry">
+       <rect>
+        <x>320</x>
+        <y>59</y>
+        <width>80</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 16pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(20, 81, 135, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string>Nhập</string>
+      </property>
+     </widget>
+     <widget class="QTextEdit" name="withdraw_report_2">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>167</y>
+        <width>370</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>45</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 14pt &quot;MS Reference Sans Serif&quot;;
+color: rgb(76, 255, 255);
+alternate-background-color: rgb(4, 168, 217);
+selection-color: rgb(10, 69, 127);
+background-color: qlineargradient(spread:pad, x1:0.006, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(7, 56, 99, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="html">
+       <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Reference Sans Serif'; font-size:14pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+     <zorder>screen_5</zorder>
+     <zorder>credit_5</zorder>
+     <zorder>withdraw_report</zorder>
+     <zorder>withdraw_hint</zorder>
+     <zorder>withdraw_label</zorder>
+     <zorder>withdraw_line_2</zorder>
+     <zorder>withdraw_line</zorder>
+     <zorder>withdraw_refresh_button</zorder>
+     <zorder>withdraw_return_button</zorder>
+     <zorder>withdraw_confirm_button</zorder>
+     <zorder>withdraw_report_2</zorder>
+    </widget>
+    <widget class="QWidget" name="add_money_screen">
+     <widget class="QLabel" name="credit_6">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>0</y>
+        <width>500</width>
+        <height>90</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>UI/credit.png</pixmap>
+      </property>
+     </widget>
+     <widget class="QLabel" name="screen_6">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>800</width>
+        <height>450</height>
+       </rect>
+      </property>
+      <property name="autoFillBackground">
+       <bool>true</bool>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>UI/screen.png</pixmap>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="add_money_return">
+      <property name="geometry">
+       <rect>
+        <x>239</x>
+        <y>59</y>
+        <width>80</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 16pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(20, 81, 135, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string>Quay lại</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="add_money_refresh">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>158</x>
+        <y>59</y>
+        <width>80</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 16pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(20, 81, 135, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string>Làm mới</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="add_money_confirm">
+      <property name="geometry">
+       <rect>
+        <x>320</x>
+        <y>59</y>
+        <width>80</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 16pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(20, 81, 135, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string>Nhập</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="add_money_hint">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>90</y>
+        <width>170</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 16pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+alternate-background-color: rgb(4, 168, 217);
+selection-color: rgb(10, 69, 127);
+background-color: qlineargradient(spread:pad, x1:0.25, y1:0.528682, x2:1, y2:0.551, stop:0 rgba(7, 56, 99, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string>  Số tiền muốn nạp :</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="add_money_label">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>71</y>
+        <width>66</width>
+        <height>19</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 75 11pt &quot;MS Shell Dlg 2&quot;;
+color: rgb(76, 255, 255);
+alternate-background-color: rgb(4, 168, 217);
+selection-color: rgb(10, 69, 127);
+background-color: qlineargradient(spread:pad, x1:0.25, y1:0.528682, x2:1, y2:0.551, stop:0 rgba(7, 56, 99, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string> Nạp tiền</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="add_money_line_2">
+      <property name="geometry">
+       <rect>
+        <x>401</x>
+        <y>90</y>
+        <width>30</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 14pt &quot;Microsoft YaHei&quot;;
+color: rgb(76, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(20, 81, 135, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="add_money_line">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>90</y>
+        <width>200</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 14pt &quot;Microsoft YaHei&quot;;
+color: rgb(76, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(20, 81, 135, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="add_money_report">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>121</y>
+        <width>370</width>
+        <height>45</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 14pt &quot;MS Reference Sans Serif&quot;;
+color: rgb(76, 255, 255);
+alternate-background-color: rgb(4, 168, 217);
+selection-color: rgb(10, 69, 127);
+background-color: qlineargradient(spread:pad, x1:0.006, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(7, 56, 99, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <zorder>screen_6</zorder>
+     <zorder>credit_6</zorder>
+     <zorder>add_money_return</zorder>
+     <zorder>add_money_refresh</zorder>
+     <zorder>add_money_confirm</zorder>
+     <zorder>add_money_hint</zorder>
+     <zorder>add_money_label</zorder>
+     <zorder>add_money_line_2</zorder>
+     <zorder>add_money_line</zorder>
+     <zorder>add_money_report</zorder>
+    </widget>
+    <widget class="QWidget" name="transfer_money_screen">
+     <widget class="QLabel" name="credit_7">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>0</y>
+        <width>500</width>
+        <height>90</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>UI/credit.png</pixmap>
+      </property>
+     </widget>
+     <widget class="QLabel" name="screen_7">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>800</width>
+        <height>450</height>
+       </rect>
+      </property>
+      <property name="autoFillBackground">
+       <bool>true</bool>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>UI/screen.png</pixmap>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="transfer_money_return_button">
+      <property name="geometry">
+       <rect>
+        <x>239</x>
+        <y>59</y>
+        <width>80</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 16pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(20, 81, 135, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string>Quay lại</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="transfer_money_confirm_button">
+      <property name="geometry">
+       <rect>
+        <x>320</x>
+        <y>59</y>
+        <width>80</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 16pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(20, 81, 135, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string>Nhập</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="transfer_money_refresh_button">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>158</x>
+        <y>59</y>
+        <width>80</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 16pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(20, 81, 135, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string>Làm mới</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="transfer_money_account_number">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>90</y>
+        <width>200</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 14pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+alternate-background-color: rgb(4, 168, 217);
+selection-color: rgb(10, 69, 127);
+background-color: qlineargradient(spread:pad, x1:0.25, y1:0.528682, x2:1, y2:0.551, stop:0 rgba(7, 56, 99, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string>  Số tài khoản người nhận :</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="transfer_money_label">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>71</y>
+        <width>87</width>
+        <height>19</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 75 11pt &quot;MS Shell Dlg 2&quot;;
+color: rgb(76, 255, 255);
+alternate-background-color: rgb(4, 168, 217);
+selection-color: rgb(10, 69, 127);
+background-color: qlineargradient(spread:pad, x1:0.25, y1:0.528682, x2:1, y2:0.551, stop:0 rgba(7, 56, 99, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string> Chuyển tiền</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="transfer_money_account_number_report">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>121</y>
+        <width>370</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 17pt &quot;MS Reference Sans Serif&quot;;
+color: rgb(76, 255, 255);
+alternate-background-color: rgb(4, 168, 217);
+selection-color: rgb(10, 69, 127);
+background-color: qlineargradient(spread:pad, x1:0.006, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(7, 56, 99, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="transfer_money_account_number_line">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>90</y>
+        <width>170</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 12pt &quot;Microsoft YaHei&quot;;
+color: rgb(76, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(20, 81, 135, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="transfer_money_account_number_line_2">
+      <property name="geometry">
+       <rect>
+        <x>401</x>
+        <y>90</y>
+        <width>30</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 14pt &quot;Microsoft YaHei&quot;;
+color: rgb(76, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(20, 81, 135, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="transfer_money_money">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>152</y>
+        <width>200</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 14pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+alternate-background-color: rgb(4, 168, 217);
+selection-color: rgb(10, 69, 127);
+background-color: qlineargradient(spread:pad, x1:0.25, y1:0.528682, x2:1, y2:0.551, stop:0 rgba(7, 56, 99, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string> Số tiền muốn chuyển        :</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="transfer_money_amount_line">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>152</y>
+        <width>170</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 12pt &quot;Microsoft YaHei&quot;;
+color: rgb(76, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(20, 81, 135, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="transfer_money_amount_report">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>183</y>
+        <width>370</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 13pt &quot;MS Reference Sans Serif&quot;;
+color: rgb(76, 255, 255);
+alternate-background-color: rgb(4, 168, 217);
+selection-color: rgb(10, 69, 127);
+background-color: qlineargradient(spread:pad, x1:0.006, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(7, 56, 99, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="transfer_money_amount_line_2">
+      <property name="geometry">
+       <rect>
+        <x>401</x>
+        <y>152</y>
+        <width>30</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 14pt &quot;Microsoft YaHei&quot;;
+color: rgb(76, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(20, 81, 135, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="transfer_money_final_report">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>214</y>
+        <width>370</width>
+        <height>45</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 17pt &quot;MS Reference Sans Serif&quot;;
+color: rgb(76, 255, 255);
+alternate-background-color: rgb(4, 168, 217);
+selection-color: rgb(10, 69, 127);
+background-color: qlineargradient(spread:pad, x1:0.006, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(7, 56, 99, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <zorder>screen_7</zorder>
+     <zorder>credit_7</zorder>
+     <zorder>transfer_money_return_button</zorder>
+     <zorder>transfer_money_confirm_button</zorder>
+     <zorder>transfer_money_refresh_button</zorder>
+     <zorder>transfer_money_account_number</zorder>
+     <zorder>transfer_money_label</zorder>
+     <zorder>transfer_money_account_number_report</zorder>
+     <zorder>transfer_money_account_number_line</zorder>
+     <zorder>transfer_money_account_number_line_2</zorder>
+     <zorder>transfer_money_money</zorder>
+     <zorder>transfer_money_amount_line</zorder>
+     <zorder>transfer_money_amount_report</zorder>
+     <zorder>transfer_money_amount_line_2</zorder>
+     <zorder>transfer_money_final_report</zorder>
+    </widget>
+    <widget class="QWidget" name="Account_information_screen">
+     <widget class="QLabel" name="credit_8">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>0</y>
+        <width>500</width>
+        <height>90</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>UI/credit.png</pixmap>
+      </property>
+     </widget>
+     <widget class="QLabel" name="screen_8">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>800</width>
+        <height>450</height>
+       </rect>
+      </property>
+      <property name="autoFillBackground">
+       <bool>true</bool>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>UI/screen.png</pixmap>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="account_information_return">
+      <property name="geometry">
+       <rect>
+        <x>226</x>
+        <y>59</y>
+        <width>80</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 16pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(20, 81, 135, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string>Quay lại</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="account_information_account_number">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>90</y>
+        <width>138</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 16pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+alternate-background-color: rgb(4, 168, 217);
+selection-color: rgb(10, 69, 127);
+background-color: qlineargradient(spread:pad, x1:0.25, y1:0.528682, x2:1, y2:0.551, stop:0 rgba(7, 56, 99, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string>  Số tài khoản     :</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="account_information_label">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>70</y>
+        <width>138</width>
+        <height>19</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 75 11pt &quot;MS Shell Dlg 2&quot;;
+color: rgb(76, 255, 255);
+alternate-background-color: rgb(4, 168, 217);
+selection-color: rgb(10, 69, 127);
+background-color: qlineargradient(spread:pad, x1:0.25, y1:0.528682, x2:1, y2:0.551, stop:0 rgba(7, 56, 99, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string> Thông tin tài khoản</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="account_information_account_name">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>121</y>
+        <width>138</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 16pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+alternate-background-color: rgb(4, 168, 217);
+selection-color: rgb(10, 69, 127);
+background-color: qlineargradient(spread:pad, x1:0.25, y1:0.528682, x2:1, y2:0.551, stop:0 rgba(7, 56, 99, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string>  Tên tài khoản   :</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="account_information_password">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>152</y>
+        <width>138</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 16pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+alternate-background-color: rgb(4, 168, 217);
+selection-color: rgb(10, 69, 127);
+background-color: qlineargradient(spread:pad, x1:0.25, y1:0.528682, x2:1, y2:0.551, stop:0 rgba(7, 56, 99, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string>  Mật khẩu           :</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="account_information_balance">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>183</y>
+        <width>138</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 16pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+alternate-background-color: rgb(4, 168, 217);
+selection-color: rgb(10, 69, 127);
+background-color: qlineargradient(spread:pad, x1:0.25, y1:0.528682, x2:1, y2:0.551, stop:0 rgba(7, 56, 99, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string>  Số tiền                :</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="account_information_line_1">
+      <property name="geometry">
+       <rect>
+        <x>168</x>
+        <y>90</y>
+        <width>138</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 16pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(20, 81, 135, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="account_information_line_2">
+      <property name="geometry">
+       <rect>
+        <x>168</x>
+        <y>121</y>
+        <width>138</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 16pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(20, 81, 135, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="account_information_line_3">
+      <property name="geometry">
+       <rect>
+        <x>168</x>
+        <y>152</y>
+        <width>138</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 16pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(20, 81, 135, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="account_information_line_4">
+      <property name="geometry">
+       <rect>
+        <x>168</x>
+        <y>183</y>
+        <width>138</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 16pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(20, 81, 135, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <zorder>screen_8</zorder>
+     <zorder>credit_8</zorder>
+     <zorder>account_information_return</zorder>
+     <zorder>account_information_account_number</zorder>
+     <zorder>account_information_label</zorder>
+     <zorder>account_information_account_name</zorder>
+     <zorder>account_information_password</zorder>
+     <zorder>account_information_balance</zorder>
+     <zorder>account_information_line_1</zorder>
+     <zorder>account_information_line_2</zorder>
+     <zorder>account_information_line_3</zorder>
+     <zorder>account_information_line_4</zorder>
+    </widget>
+    <widget class="QWidget" name="Edit_information_screen">
+     <widget class="QLabel" name="credit_9">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>0</y>
+        <width>500</width>
+        <height>90</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>UI/credit.png</pixmap>
+      </property>
+     </widget>
+     <widget class="QLabel" name="screen_9">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>800</width>
+        <height>450</height>
+       </rect>
+      </property>
+      <property name="autoFillBackground">
+       <bool>true</bool>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>UI/screen.png</pixmap>
+      </property>
+     </widget>
+     <widget class="QLabel" name="account_information_label_2">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>70</y>
+        <width>164</width>
+        <height>19</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 75 11pt &quot;MS Shell Dlg 2&quot;;
+color: rgb(76, 255, 255);
+alternate-background-color: rgb(4, 168, 217);
+selection-color: rgb(10, 69, 127);
+background-color: qlineargradient(spread:pad, x1:0.25, y1:0.528682, x2:1, y2:0.551, stop:0 rgba(7, 56, 99, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string> Sửa thông tin tài khoản</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="account_information_account_name_2">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>121</y>
+        <width>138</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 16pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+alternate-background-color: rgb(4, 168, 217);
+selection-color: rgb(10, 69, 127);
+background-color: qlineargradient(spread:pad, x1:0.25, y1:0.528682, x2:1, y2:0.551, stop:0 rgba(7, 56, 99, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string>  Tên tài khoản   :</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="account_information_password_2">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>152</y>
+        <width>138</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 16pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+alternate-background-color: rgb(4, 168, 217);
+selection-color: rgb(10, 69, 127);
+background-color: qlineargradient(spread:pad, x1:0.25, y1:0.528682, x2:1, y2:0.551, stop:0 rgba(7, 56, 99, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string>  Mật khẩu           :</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="account_information_account_number_2">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>90</y>
+        <width>138</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 16pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+alternate-background-color: rgb(4, 168, 217);
+selection-color: rgb(10, 69, 127);
+background-color: qlineargradient(spread:pad, x1:0.25, y1:0.528682, x2:1, y2:0.551, stop:0 rgba(7, 56, 99, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string>  Số tài khoản     :</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="edit_account_information_line_1">
+      <property name="geometry">
+       <rect>
+        <x>168</x>
+        <y>90</y>
+        <width>138</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 12pt &quot;Microsoft YaHei&quot;;
+color: rgb(76, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(20, 81, 135, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="edit_account_information_line_2">
+      <property name="geometry">
+       <rect>
+        <x>168</x>
+        <y>121</y>
+        <width>138</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 12pt &quot;Microsoft YaHei&quot;;
+color: rgb(76, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(20, 81, 135, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="edit_account_information_line_3">
+      <property name="geometry">
+       <rect>
+        <x>168</x>
+        <y>152</y>
+        <width>138</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 12pt &quot;Microsoft YaHei&quot;;
+color: rgb(76, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(20, 81, 135, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="edit_account_information_return">
+      <property name="geometry">
+       <rect>
+        <x>195</x>
+        <y>59</y>
+        <width>80</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 16pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(20, 81, 135, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string>Quay lại</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="edit_account_information_confirm">
+      <property name="geometry">
+       <rect>
+        <x>276</x>
+        <y>59</y>
+        <width>80</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 16pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(20, 81, 135, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string>Nhập</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="edit_account_information_report">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>183</y>
+        <width>306</width>
+        <height>45</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 10pt &quot;MS Reference Sans Serif&quot;;
+color: rgb(76, 255, 255);
+alternate-background-color: rgb(4, 168, 217);
+selection-color: rgb(10, 69, 127);
+background-color: qlineargradient(spread:pad, x1:0.006, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(7, 56, 99, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="edit_account_information_line_4">
+      <property name="geometry">
+       <rect>
+        <x>307</x>
+        <y>90</y>
+        <width>30</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 14pt &quot;Microsoft YaHei&quot;;
+color: rgb(76, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(20, 81, 135, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <zorder>screen_9</zorder>
+     <zorder>credit_9</zorder>
+     <zorder>account_information_label_2</zorder>
+     <zorder>account_information_account_name_2</zorder>
+     <zorder>account_information_password_2</zorder>
+     <zorder>account_information_account_number_2</zorder>
+     <zorder>edit_account_information_line_1</zorder>
+     <zorder>edit_account_information_line_2</zorder>
+     <zorder>edit_account_information_line_3</zorder>
+     <zorder>edit_account_information_return</zorder>
+     <zorder>edit_account_information_confirm</zorder>
+     <zorder>edit_account_information_report</zorder>
+     <zorder>edit_account_information_line_4</zorder>
+    </widget>
+    <widget class="QWidget" name="delete_account_screen">
+     <widget class="QLabel" name="credit_10">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>0</y>
+        <width>500</width>
+        <height>90</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>UI/credit.png</pixmap>
+      </property>
+     </widget>
+     <widget class="QLabel" name="screen_10">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>800</width>
+        <height>450</height>
+       </rect>
+      </property>
+      <property name="autoFillBackground">
+       <bool>true</bool>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>UI/screen.png</pixmap>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="delete_account_return_button">
+      <property name="geometry">
+       <rect>
+        <x>239</x>
+        <y>59</y>
+        <width>80</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 16pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(20, 81, 135, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string>Quay lại</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="delete_account_refresh_button">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>158</x>
+        <y>59</y>
+        <width>80</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 16pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(20, 81, 135, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string>Làm mới</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="delete_account_confirm">
+      <property name="geometry">
+       <rect>
+        <x>320</x>
+        <y>59</y>
+        <width>80</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 16pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(20, 81, 135, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string>Nhập</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="delete_account_hint">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>90</y>
+        <width>160</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 16pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+alternate-background-color: rgb(4, 168, 217);
+selection-color: rgb(10, 69, 127);
+background-color: qlineargradient(spread:pad, x1:0.25, y1:0.528682, x2:1, y2:0.551, stop:0 rgba(7, 56, 99, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string>  Số tài khoản          :</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="delete_account_report">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>121</y>
+        <width>370</width>
+        <height>45</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 14pt &quot;MS Reference Sans Serif&quot;;
+color: rgb(76, 255, 255);
+alternate-background-color: rgb(4, 168, 217);
+selection-color: rgb(10, 69, 127);
+background-color: qlineargradient(spread:pad, x1:0.006, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(7, 56, 99, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="delete_account_label">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>71</y>
+        <width>101</width>
+        <height>19</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 75 11pt &quot;MS Shell Dlg 2&quot;;
+color: rgb(76, 255, 255);
+alternate-background-color: rgb(4, 168, 217);
+selection-color: rgb(10, 69, 127);
+background-color: qlineargradient(spread:pad, x1:0.25, y1:0.528682, x2:1, y2:0.551, stop:0 rgba(7, 56, 99, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string> Xóa tài khoản</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="delete_account_line">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>90</y>
+        <width>210</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 14pt &quot;Microsoft YaHei&quot;;
+color: rgb(76, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(20, 81, 135, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="delete_account_line_2">
+      <property name="geometry">
+       <rect>
+        <x>401</x>
+        <y>90</y>
+        <width>30</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 14pt &quot;Microsoft YaHei&quot;;
+color: rgb(76, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(20, 81, 135, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <zorder>screen_10</zorder>
+     <zorder>credit_10</zorder>
+     <zorder>delete_account_return_button</zorder>
+     <zorder>delete_account_refresh_button</zorder>
+     <zorder>delete_account_confirm</zorder>
+     <zorder>delete_account_hint</zorder>
+     <zorder>delete_account_report</zorder>
+     <zorder>delete_account_label</zorder>
+     <zorder>delete_account_line</zorder>
+     <zorder>delete_account_line_2</zorder>
+    </widget>
+    <widget class="QWidget" name="atm_add_money_screen">
+     <widget class="QLabel" name="credit_11">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>0</y>
+        <width>500</width>
+        <height>90</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>UI/credit.png</pixmap>
+      </property>
+     </widget>
+     <widget class="QLabel" name="screen_11">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>800</width>
+        <height>450</height>
+       </rect>
+      </property>
+      <property name="autoFillBackground">
+       <bool>true</bool>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>UI/screen.png</pixmap>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="atm_add_money_currency_1">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>121</y>
+        <width>100</width>
+        <height>100</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 24pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(20, 81, 135, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string>10k</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="atm_add_money_currency_2">
+      <property name="geometry">
+       <rect>
+        <x>131</x>
+        <y>121</y>
+        <width>100</width>
+        <height>100</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 24pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(20, 81, 135, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string>20k</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="atm_add_money_currency_3">
+      <property name="geometry">
+       <rect>
+        <x>232</x>
+        <y>121</y>
+        <width>100</width>
+        <height>100</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 24pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(20, 81, 135, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string>50k</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="atm_add_money_currency_4">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>222</y>
+        <width>100</width>
+        <height>100</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 24pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(20, 81, 135, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string>100k</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="atm_add_money_currency_5">
+      <property name="geometry">
+       <rect>
+        <x>131</x>
+        <y>222</y>
+        <width>100</width>
+        <height>100</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 24pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(20, 81, 135, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string>200k</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="atm_add_money_currency_6">
+      <property name="geometry">
+       <rect>
+        <x>232</x>
+        <y>222</y>
+        <width>100</width>
+        <height>100</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 24pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(20, 81, 135, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string>500k</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_1">
+      <property name="geometry">
+       <rect>
+        <x>333</x>
+        <y>121</y>
+        <width>41</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 13pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(20, 81, 135, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string>  10k :</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>333</x>
+        <y>152</y>
+        <width>41</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 13pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(20, 81, 135, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string>  20k :</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_3">
+      <property name="geometry">
+       <rect>
+        <x>333</x>
+        <y>183</y>
+        <width>41</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 13pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(20, 81, 135, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string>  50k :</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_4">
+      <property name="geometry">
+       <rect>
+        <x>333</x>
+        <y>214</y>
+        <width>41</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 13pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(20, 81, 135, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string> 100k:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_5">
+      <property name="geometry">
+       <rect>
+        <x>333</x>
+        <y>245</y>
+        <width>41</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 13pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(20, 81, 135, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string> 200k:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_6">
+      <property name="geometry">
+       <rect>
+        <x>333</x>
+        <y>276</y>
+        <width>41</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 13pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(20, 81, 135, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string> 500k:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_2_1">
+      <property name="geometry">
+       <rect>
+        <x>374</x>
+        <y>121</y>
+        <width>50</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 13pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(20, 81, 135, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_2_2">
+      <property name="geometry">
+       <rect>
+        <x>374</x>
+        <y>152</y>
+        <width>50</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 13pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(20, 81, 135, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_2_3">
+      <property name="geometry">
+       <rect>
+        <x>374</x>
+        <y>183</y>
+        <width>50</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 13pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(20, 81, 135, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_2_4">
+      <property name="geometry">
+       <rect>
+        <x>374</x>
+        <y>214</y>
+        <width>50</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 13pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(20, 81, 135, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_2_5">
+      <property name="geometry">
+       <rect>
+        <x>374</x>
+        <y>245</y>
+        <width>50</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 13pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(20, 81, 135, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_2_6">
+      <property name="geometry">
+       <rect>
+        <x>374</x>
+        <y>276</y>
+        <width>50</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 13pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(20, 81, 135, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="atm_add_money_return">
+      <property name="geometry">
+       <rect>
+        <x>333</x>
+        <y>307</y>
+        <width>90</width>
+        <height>40</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 18pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(20, 81, 135, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string>Quay lại</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="atm_add_money_confirm">
+      <property name="geometry">
+       <rect>
+        <x>333</x>
+        <y>348</y>
+        <width>90</width>
+        <height>40</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 18pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(20, 81, 135, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string>Nhập</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="atm_add_money_hint">
+      <property name="geometry">
+       <rect>
+        <x>201</x>
+        <y>323</y>
+        <width>71</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 17pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(20, 81, 135, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string>  Số tờ :</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="atm_add_money_line">
+      <property name="geometry">
+       <rect>
+        <x>272</x>
+        <y>323</y>
+        <width>60</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 17pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(20, 81, 135, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="currency_hint">
+      <property name="geometry">
+       <rect>
+        <x>201</x>
+        <y>354</y>
+        <width>131</width>
+        <height>34</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 14pt &quot;Corbel Light&quot;;
+color: rgb(76, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0.528682, x2:0.347318, y2:0.523, stop:0.4375 rgba(20, 81, 135, 255), stop:1 rgba(20, 81, 135, 255));
+border:rgb(15, 110, 199);</string>
+      </property>
+      <property name="text">
+       <string>  Mệnh giá :</string>
+      </property>
+     </widget>
+     <zorder>screen_11</zorder>
+     <zorder>credit_11</zorder>
+     <zorder>atm_add_money_currency_1</zorder>
+     <zorder>atm_add_money_currency_2</zorder>
+     <zorder>atm_add_money_currency_3</zorder>
+     <zorder>atm_add_money_currency_4</zorder>
+     <zorder>atm_add_money_currency_5</zorder>
+     <zorder>atm_add_money_currency_6</zorder>
+     <zorder>label_1</zorder>
+     <zorder>label_2</zorder>
+     <zorder>label_3</zorder>
+     <zorder>label_4</zorder>
+     <zorder>label_5</zorder>
+     <zorder>label_6</zorder>
+     <zorder>label_2_1</zorder>
+     <zorder>label_2_2</zorder>
+     <zorder>label_2_3</zorder>
+     <zorder>label_2_4</zorder>
+     <zorder>label_2_5</zorder>
+     <zorder>label_2_6</zorder>
+     <zorder>atm_add_money_return</zorder>
+     <zorder>atm_add_money_confirm</zorder>
+     <zorder>atm_add_money_hint</zorder>
+     <zorder>atm_add_money_line</zorder>
+     <zorder>currency_hint</zorder>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <tabstops>
+  <tabstop>pushButton_login</tabstop>
+  <tabstop>pushButton_add_account</tabstop>
+  <tabstop>pushButton_delete_account</tabstop>
+  <tabstop>pushButton_atm_add_money</tabstop>
+  <tabstop>login_account_number_line</tabstop>
+  <tabstop>password_line</tabstop>
+  <tabstop>login_login</tabstop>
+  <tabstop>login_return</tabstop>
+  <tabstop>login_password_censor</tabstop>
+  <tabstop>withdraw_button</tabstop>
+  <tabstop>add_money_button</tabstop>
+  <tabstop>transfer_money_button</tabstop>
+  <tabstop>account_information_button</tabstop>
+  <tabstop>edit_information_button</tabstop>
+  <tabstop>logout_button</tabstop>
+  <tabstop>add_account_number_line</tabstop>
+  <tabstop>add_account_username_line</tabstop>
+  <tabstop>add_account_password_line</tabstop>
+  <tabstop>add_account_balance_line</tabstop>
+  <tabstop>add_account_confirm</tabstop>
+  <tabstop>add_account_return</tabstop>
+  <tabstop>add_account_continue</tabstop>
+  <tabstop>add_account_password_censor</tabstop>
+  <tabstop>withdraw_line</tabstop>
+  <tabstop>withdraw_confirm_button</tabstop>
+  <tabstop>withdraw_return_button</tabstop>
+  <tabstop>withdraw_refresh_button</tabstop>
+  <tabstop>withdraw_report_2</tabstop>
+  <tabstop>transfer_money_account_number_line</tabstop>
+  <tabstop>transfer_money_amount_line</tabstop>
+  <tabstop>transfer_money_confirm_button</tabstop>
+  <tabstop>transfer_money_return_button</tabstop>
+  <tabstop>transfer_money_refresh_button</tabstop>
+  <tabstop>delete_account_line</tabstop>
+  <tabstop>delete_account_confirm</tabstop>
+  <tabstop>delete_account_return_button</tabstop>
+  <tabstop>delete_account_refresh_button</tabstop>
+  <tabstop>atm_add_money_currency_1</tabstop>
+  <tabstop>atm_add_money_currency_2</tabstop>
+  <tabstop>atm_add_money_currency_3</tabstop>
+  <tabstop>atm_add_money_currency_4</tabstop>
+  <tabstop>atm_add_money_currency_5</tabstop>
+  <tabstop>atm_add_money_currency_6</tabstop>
+  <tabstop>atm_add_money_line</tabstop>
+  <tabstop>atm_add_money_confirm</tabstop>
+  <tabstop>atm_add_money_return</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>
