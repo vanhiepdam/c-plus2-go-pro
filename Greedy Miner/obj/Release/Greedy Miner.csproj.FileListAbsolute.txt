@@ -1,0 +1,6 @@
+C:\Users\thienha\Documents\Visual Studio 2015\Projects\Greedy Miner\Greedy Miner\bin\Release\Greedy Miner.exe.config
+C:\Users\thienha\Documents\Visual Studio 2015\Projects\Greedy Miner\Greedy Miner\bin\Release\Greedy Miner.exe
+C:\Users\thienha\Documents\Visual Studio 2015\Projects\Greedy Miner\Greedy Miner\bin\Release\Greedy Miner.pdb
+C:\Users\thienha\Documents\Visual Studio 2015\Projects\Greedy Miner\Greedy Miner\obj\Release\Greedy Miner.exe
+C:\Users\thienha\Documents\Visual Studio 2015\Projects\Greedy Miner\Greedy Miner\obj\Release\Greedy Miner.pdb
+C:\Users\thienha\documents\visual studio 2015\Projects\Greedy Miner\Greedy Miner\obj\Release\Greedy Miner.csprojResolveAssemblyReference.cache
