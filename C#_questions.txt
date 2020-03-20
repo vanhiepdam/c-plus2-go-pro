@@ -1,0 +1,202 @@
+1. Difference between a Class and a Struct?
+	Class support inheritance / struct doesnt
+	Class are reference types / struct are value types
+	reference mean the variable contain a pointer to a value in the heap
+2. Virtual methods and Abstract methods?
+	virtual is declared to be derived in the future
+	abstract methods do not have a body, it is implemented by classes that derive the method.
+3. What are Namespaces?
+	namespace are use to better control large project? idk, hard to expln
+	namespace Duoc {
+		class brain {
+			public int getABC {
+				return 1;
+			}
+		}
+	}
+	namespace Hiep {
+		class brain {
+			public int getABC {
+				return 2;
+			}
+		}
+	}
+	Duoc.brain::getABC; -> 1
+	Hiep.brain::getABC; -> 2
+	
+	or
+	
+	using Duoc;
+	brain::getABC; -> 1
+	using Hiep;
+	brain::getABC; -> 2
+	
+4. What are I/O classes? Define the most common use case
+	File - read, create, write, manage ... ect
+	Instance:
+	if (File.Exists(Application.StartupPath + "/data.txt") != true) {
+            File.WriteAllText(Application.StartupPath + "/data.txt", "0");
+        }
+        else
+        {
+            playerHighScore = Convert.ToInt32(File.ReadAllText(Application.StartupPath + "/data.txt"));
+        }
+	-> find data.txt file in the folder application at. if it doesnt exist, create one. else, read from it.
+	}
+5. What are regular expressions? Write a program that searches a string using regular expressions
+	i finished the tutorial on website
+6. Give a detailed explanation of Delegates?
+	Delegates are similar to pointers, a Delegates hold the reference to a method;
+	for instance:
+		public delegate int Coup(int c);
+		the preceding delegate can be used to reference any method that has a single int parameter and returns an int.
+	public static int getDouble(int c) {
+		return c * 2;
+	}
+	public static int getTriple(int c) {
+		return c / 2;
+	}
+	(in Main)\\
+	Coup a1 = new Coup(getDouble); <- declare a new Coup objects referencing the method getDouble
+	console.WriteLine("{0}", a1(2)); <- console should print 4
+	a1 = getTriple;
+	console.WriteLine("{0}", a1(2)); <- console should print 1
+7. Explain Reflection?
+	Reflection are classes allow access, inspect objects information in the assembly, like classes, methods, variable, types and much more.
+9. Define Serialization and its various types?
+	serialization is the process of converting an object into a stream of bytes to store the object or transmit it to memory, a database, or a file
+	JSON serialization
+	Binary serialization
+	XML serialization
+	Basic and custom serialization
+10. Give a brief explanation on Thread Pooling.
+	Thread pooling is the process of creating a collection of threads during the initialization of a multithreaded application
+	basic
+11. Is it possible to use this keyword within a static method?
+	no.
+12. What can you tell us about the XSD file?
+	An XSD file is a file used to define what elements and attributes may appear in an XML document
+	It also defines the relationship of the elements and what data may be stored in them
+13. What do you mean by Constructor Chaining?
+	Constructor chaining means that one constructor calls another constructor
+14. Explain different states of a Thread?
+	unstarted state:
+		when the thread is created but not started
+	runabble state:
+		when the thread is ready to run it is moved to runnable state
+	not running state:
+		Sleep() method is called
+		Wait() method is called
+		Suspend() method is called
+	dead state:
+		when the thread is finished it task, terminated
+15. Why do we use Async and Await?
+	Asyn is a specifier to implement asynchonous programming allows a unit of work to run separately from the primary application thread 
+	Await is a keyword that make the application wait a Task to complete
+16. What is an Indexer, and how do you create one?
+	An indexer allows an object to be indexed such as an array
+	class toolBox {
+		stattic public int size = 10;
+		private string[] data = new int[size];
+		public toolBox(int c) {
+			this->size = c;
+		}
+		public string this[int index] {
+			get {
+				if( index >= 0 && index <= size-1 ) {
+					return this->data[index];
+				}
+			}
+			set {
+				if( index >= 0 && index <= size-1 ) {
+					this->data[index] = value;
+				}
+			}
+		}
+	}
+	class program {
+		static void Main(string[] args) {
+			toolBox aids = new toolBox;
+			aids[0] = "sword"; // assign "sword" to index 0 of aids instance of class toolBox
+			aids[1] = "pickaxe";
+			aids[2] = "axe";
+			aids[3] = "shovel";
+			Console.WriteLine({0}, aids[0]); // should print sword on the console
+			Console.WriteLine({0}, aids[1]); // pickaxe
+			Console.WriteLine({0}, aids[2]); // axe
+			Console.WriteLine({0}, aids[3]); // shovel
+		}
+	}
+	
+	
+17. What is the Race condition?
+	A race condition occurs when two or more threads are able to access shared data and they try to change it at the same time
+18. What do you understand by Get and Set Accessor properties?
+	get accessor:
+		is executed whenever the property is invoked as read
+	set accessor:
+		is executed whenever the property is assigned by a value
+19. Give a detailed explanation of the differences between ref and out keywords.
+	Ref
+		It is necessary the parameters should initialize before it pass to ref
+	Out
+		It is not necessary to initialize parameters before it pass to out.
+		
+		
+	Ref
+		It is not necessary to initialize the value of a parameter before returning to the calling method.
+	Out
+		It is necessary to initialize the value of a parameter before returning to the calling method.
+		
+		
+	Ref
+		The passing of value through ref parameter is useful when the called method also need to change the value of passed parameter.
+	Out
+		The declaring of parameter through out parameter is useful when a method return multiple values.
+		
+		
+	Ref
+		When ref keyword is used the data may pass in bi-directional.
+	Out
+		When out keyword is used the data only passed in unidirectional.
+		
+20. What is Singleton Design Pattern? Explain an implementation using an example
+	Singleton is only one object of its kind exists and provides a single point of access to it
+	or a class that only has 1 static instance, and the client could only access to
+	example:
+	
+	class Text {
+		private string value = new string;
+		private Text() { } <- override default constructor so the client couldn't create new instance of it
+		
+		private static Text t_instance; <- (class only instance) the client will access to this instance over and over
+
+		public static Text getText() { <- actual constructor
+			if(t_instance == null) { <- default t_instance point to null
+				t_instance = new Text(); <- if so create new class only instance 
+			} else {
+				return t_instance; <- if the class only instance exist, return it
+			}
+		public string setValue(string c) {
+			this->value = c;
+		}
+		public string getValue() {
+			return this->value;
+		}
+	}
+	class Program {
+		class static void Main(string[] args) {
+			Text c1 = Text.getText();
+			Text c2 = Text.getText(); <- both of c1 and c2 should point to the same instance;
+			c1.getText().setValue("hello world");
+			c2.getText().setValue("HELLO WORLD");
+			Console.WriteLine({0}, c1.getText().getValue()); <- should print HELLO WORLD on console
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
